@@ -1,5 +1,42 @@
+# Compiled Source
 *.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Artifacts
+*.7z
+*.dmg
+*.ear
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.war
+*.zip
+# Logs
 *.log
+
+# OS Files
+.DS_Store
+
+# Maven Build Directory
+target
+
+# Idea IDE
+.idea
+*.iml
+*.launch
+
+# Eclipse IDE
+.classpath
+.project
+.jsdtscope
+.settings
 
 # sbt specific
 .cache/
