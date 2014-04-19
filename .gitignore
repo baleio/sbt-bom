@@ -18,6 +18,7 @@
 *.tgz
 *.war
 *.zip
+
 # Logs
 *.log
 
