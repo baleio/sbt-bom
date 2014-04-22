@@ -81,7 +81,7 @@ object Settings {
     resolvers := allResolvers,
     scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature"),
     scalacOptions in(Compile, doc) ++= Seq("-external-urls:scala=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
-    javacOptions ++= Seq("-Xlint:all"),
+    javacOptions ++= Seq("-source", "1.8", "-target", "1.8", "-Xlint:all"),
     publishMavenStyle := true,
     publishTo <<= version {
       (v: String) =>

@@ -10,6 +10,10 @@ organizationHomepage := Some(url("http://www.acme.com"))
 
 version := "1.0.0-SNAPSHOT"
 
+scalaVersion := "2.10.4"
+
+javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
+
 resolvers ++= Seq(
   "ACME Mirror" at "http://nexus.acme.com/content/groups/public",
   "ACME Releases" at "http://nexus.acme.com/content/repositories/acme-releases",
