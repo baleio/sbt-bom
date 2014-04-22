@@ -2,11 +2,11 @@ sbtPlugin := true
 
 name := "bom"
 
-organization := "com.acme.sbt.bom"
+organization := "com.github.baleio.sbt.bom"
 
-organizationName := "ACME Inc."
+organizationName := "Baleio Inc."
 
-organizationHomepage := Some(url("http://www.acme.com"))
+organizationHomepage := Some(url("http://www.bale.io"))
 
 version := "1.0.0-SNAPSHOT"
 
@@ -15,20 +15,20 @@ scalaVersion := "2.10.4"
 javacOptions ++= Seq("-source", "1.8", "-target", "1.8")
 
 resolvers ++= Seq(
-  "ACME Mirror" at "http://nexus.acme.com/content/groups/public",
-  "ACME Releases" at "http://nexus.acme.com/content/repositories/acme-releases",
-  "ACME 3rd Party" at "http://nexus.acme.com/content/repositories/acme-thirdparty",
-  "ACME Snapshots" at "http://nexus.acme.com/content/repositories/acme-snapshots"
+  "Baleio Mirror" at "http://nexus.baleio.com/content/groups/public",
+  "Baleio Releases" at "http://nexus.baleio.com/content/repositories/baleio-releases",
+  "Baleio 3rd Party" at "http://nexus.baleio.com/content/repositories/baleio-thirdparty",
+  "Baleio Snapshots" at "http://nexus.baleio.com/content/repositories/baleio-snapshots"
 )
 
 publishMavenStyle := true
 
 publishTo <<= version { (v: String) =>
-  val nexus = "http://nexus.acme.com/"
+  val nexus = "http://nexus.bale.io/"
   if (v.trim.endsWith("SNAPSHOT"))
-    Some("ACME Snapshots" at nexus + "content/repositories/acme-snapshots")
+    Some("Baleio Snapshots" at nexus + "content/repositories/baleio-snapshots")
   else
-    Some("ACME Releases"  at nexus + "content/repositories/acme-releases")
+    Some("Baleio Releases"  at nexus + "content/repositories/baleio-releases")
 }
 
-credentials += Credentials(Path.userHome / ".ivy2" / ".auth-acme")
+credentials += Credentials(Path.userHome / ".ivy2" / ".auth-baleio")

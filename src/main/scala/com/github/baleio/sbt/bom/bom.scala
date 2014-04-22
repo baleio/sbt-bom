@@ -1,22 +1,19 @@
-package com.acme.sbt.bom
+package com.github.baleio.sbt.bom
 
 import sbt._
 import Keys._
 
 object Resolvers {
-  val mirror = "ACME Mirror" at "http://nexus.acme.com/content/groups/public"
-  val releases = "ACME Releases" at "http://nexus.acme.com/content/repositories/acme-releases"
-  val snapshots = "ACME Snapshots" at "http://nexus.acme.com/content/repositories/acme-snapshots"
-  val thirdparty = "ACME 3rd Party" at "http://nexus.acme.com/content/repositories/acme-thirdparty"
+  val mirror = "Baleio Mirror" at "http://nexus.bale.io/content/groups/public"
+  val releases = "Baleio Releases" at "http://nexus.bale.io/content/repositories/baleio-releases"
+  val snapshots = "Baleio Snapshots" at "http://nexus.bale.io/content/repositories/baleio-snapshots"
+  val thirdparty = "Baleio 3rd Party" at "http://nexus.bale.io/content/repositories/baleio -thirdparty"
   val allResolvers = Seq(releases, snapshots, thirdparty, mirror)
 }
 
 object Dependencies {
-
   // Versions
   object versions {
-    val platform = "1.0.0-SNAPSHOT"
-
     val activemq = "5.9.0"
     val akka = "2.3.0"
     val ant = "1.9.3"
@@ -62,19 +59,16 @@ object Dependencies {
     val yammerMetrics = "2.2.0"
   }
 
-
-
-
   val aopalliance = "aopalliance" % "aopalliance" % "1.0"
 
   val antlr = "antlr" % "antlr" % "2.7.7"
-  val antlrStringTemplate = "antlr" % "stringtemplate" % "3.2.1"
+  val antlrStringtemplate = "antlr" % "stringtemplate" % "3.2.1"
 
-  val asm = "asm" % "asm" % "3.3.1"
-  val asmAttrs = "asm" % "asm-attrs" % "2.2.3"
-  val asmCommons = "asm" % "asm-commons" % "3.3.1"
-  val asmTree = "asm" % "asm-tree" % "3.3.1"
-  val asmUtil = "asm" % "asm-util" % "3.3.1"
+  val oldAsm = "asm" % "asm" % "3.3.1"
+  val oldAsmAttrs = "asm" % "asm-attrs" % "2.2.3"
+  val oldAsmCommons = "asm" % "asm-commons" % "3.3.1"
+  val oldAsmTree = "asm" % "asm-tree" % "3.3.1"
+  val oldAsmUtil = "asm" % "asm-util" % "3.3.1"
 
   val batik = "batik" % "batik" % "1.5"
   val batikBridge = "batik" % "batik-brdige" % "$BATIK_VERSION"
@@ -87,9 +81,9 @@ object Dependencies {
   val batikTranscoder = "batik" % "batik-transcoder" % "$BATIK_VERSION"
   val batikUtil = "batik" % "batik-util" % "$BATIK_VERSION"
 
-  val bcmailJdk14 = "bouncycastle" % "bcmail-jdk14" % "138"
-  val bcprovJdk14 = "bouncycastle" % "bcprov-jdk14" % "140"
-  val bctspJdk14 = "bouncycastle" % "bctsp-jdk14" % "138"
+  val oldBcmailJdk14 = "bouncycastle" % "bcmail-jdk14" % "138"
+  val oldBcprovJdk14 = "bouncycastle" % "bcprov-jdk14" % "140"
+  val oldbctspJdk14 = "bouncycastle" % "bctsp-jdk14" % "138"
 
   val c3p0 = "c3p0" % "c3p0" % "0.9.1.2"
 
@@ -126,23 +120,22 @@ object Dependencies {
   val metricsServlet = "com.codahale.metrics" % "metrics-servlet" % versions.metrics
   val metricsServlets = "com.codahale.metrics" % "metrics-servlets" % versions.metrics
 
-
-  val jacksonAnnotations = "com.fasterxml.jackson.core" % "jackson-annotations" % "$JACKSON_VERSION"
-  val jacksonCore = "com.fasterxml.jackson.core" % "jackson-core" % "$JACKSON_VERSION"
-  val jacksonDatabind = "com.fasterxml.jackson.core" % "jackson-databind" % "$JACKSON_VERSION"
-  val jacksonDataformatXml = "com.fasterxml.jackson.dataformat" % "jackson-dataformat-xml" % "$JACKSON_VERSION"
-  val jacksonDataformatYaml = "com.fasterxml.jackson.dataformat" % "jackson-dataformat-yaml" % "$JACKSON_VERSION"
-  val jacksonDatatypeGuava = "com.fasterxml.jackson.datatype" % "jackson-datatype-guava" % "$JACKSON_VERSION"
-  val jacksonDatatypeHppc = "com.fasterxml.jackson.datatype" % "jackson-datatype-hppc" % "$JACKSON_VERSION"
-  val jacksonDatatypeJoda = "com.fasterxml.jackson.datatype" % "jackson-datatype-joda" % "$JACKSON_VERSION"
-  val jacksonDatatypeJsonOrg = "com.fasterxml.jackson.datatype" % "jackson-datatype-json-org" % "$JACKSON_VERSION"
-  val jacksonDatatypeJsr353 = "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr353" % "$JACKSON_VERSION"
-  val jacksonJaxrsBase = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-base" % "$JACKSON_VERSION"
-  val jacksonJaxrsJsonProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-json-provider" % "$JACKSON_VERSION"
-  val jacksonJaxrsSmileProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-smile-provider" % "$JACKSON_VERSION"
-  val jacksonJaxrsXmlProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-xml-provider" % "$JACKSON_VERSION"
-  val jacksonModuleJaxbAnnotations = "com.fasterxml.jackson.module" % "jackson-module-jaxb-annotations" % "$JACKSON_VERSION"
-  val jacksonModuleAfterburner = "com.fasterxml.jackson.module" % "jackson-module-afterburner" % "$JACKSON_VERSION"
+  val jacksonAnnotations = "com.fasterxml.jackson.core" % "jackson-annotations" % versions.jackson
+  val jacksonCore = "com.fasterxml.jackson.core" % "jackson-core" % versions.jackson
+  val jacksonDatabind = "com.fasterxml.jackson.core" % "jackson-databind" % versions.jackson
+  val jacksonDataformatXml = "com.fasterxml.jackson.dataformat" % "jackson-dataformat-xml" % versions.jackson
+  val jacksonDataformatYaml = "com.fasterxml.jackson.dataformat" % "jackson-dataformat-yaml" % versions.jackson
+  val jacksonDatatypeGuava = "com.fasterxml.jackson.datatype" % "jackson-datatype-guava" % versions.jackson
+  val jacksonDatatypeHppc = "com.fasterxml.jackson.datatype" % "jackson-datatype-hppc" % versions.jackson
+  val jacksonDatatypeJoda = "com.fasterxml.jackson.datatype" % "jackson-datatype-joda" % versions.jackson
+  val jacksonDatatypeJsonOrg = "com.fasterxml.jackson.datatype" % "jackson-datatype-json-org" % versions.jackson
+  val jacksonDatatypeJsr353 = "com.fasterxml.jackson.datatype" % "jackson-datatype-jsr353" % versions.jackson
+  val jacksonJaxrsBase = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-base" % versions.jackson
+  val jacksonJaxrsJsonProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-json-provider" % versions.jackson
+  val jacksonJaxrsSmileProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-smile-provider" % versions.jackson
+  val jacksonJaxrsXmlProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-xml-provider" % versions.jackson
+  val jacksonModuleJaxbAnnotations = "com.fasterxml.jackson.module" % "jackson-module-jaxb-annotations" % versions.jackson
+  val jacksonModuleAfterburner = "com.fasterxml.jackson.module" % "jackson-module-afterburner" % versions.jackson
 
   val slugify = "com.github.slugify" % "slugify" % "2.1.2"
 
@@ -150,12 +143,12 @@ object Dependencies {
 
   val guava = "com.google.guava" % "guava" % "16.0.1"
 
-  val guice = "com.google.inject" % "guice" % "$GUICE_VERSION"
-  val guiceAssistedInject = "com.google.inject.extensions" % "guice-assistedinject" % "$GUICE_VERSION"
-  val guiceJmx = "com.google.inject.extensions" % "guice-jmx" % "$GUICE_VERSION"
-  val guiceJndi = "com.google.inject.extensions" % "guice-jndi" % "$GUICE_VERSION"
-  val guiceMultibindings = "com.google.inject.extensions" % "guice-multibindings" % "$GUICE_VERSION"
-  val guiceServlet = "com.google.inject.extensions" % "guice-servlet" % "$GUICE_VERSION"
+  val guice = "com.google.inject" % "guice" % versions.guice
+  val guiceAssistedInject = "com.google.inject.extensions" % "guice-assistedinject" % versions.guice
+  val guiceJmx = "com.google.inject.extensions" % "guice-jmx" % versions.guice
+  val guiceJndi = "com.google.inject.extensions" % "guice-jndi" % versions.guice
+  val guiceMultibindings = "com.google.inject.extensions" % "guice-multibindings" % versions.guice
+  val guiceServlet = "com.google.inject.extensions" % "guice-servlet" % versions.guice
 
   val findbugs = "com.google.code.findbugs" % "findbugs" % "2.0.3"
   val findbugsAnnotations = "com.google.code.findbugs" % "findbugs-annotations" % "2.0.3"
@@ -171,7 +164,7 @@ object Dependencies {
   
   val itext = "com.lowagie" % "itext" % "4.2.1"
   
-  val c3p0 = "com.mchange" % "c3p0" % "0.9.2.1"
+  val mchangeC3p0 = "com.mchange" % "c3p0" % "0.9.2.1"
   
   val base64 = "com.mindprod" % "base64" % "1.6"
   
@@ -181,18 +174,18 @@ object Dependencies {
 
   val rabbitmqAmqpClient = "com.rabbitmq" % "amqp-client" % "3.2.4"
 
-  val jersey1Client = "com.sun.jersey" % "jersey-client" % "$JERSEY_ONE_VERSION"
-  val jersey1Core = "com.sun.jersey" % "jersey-core" % "$JERSEY_ONE_VERSION"
-  val jersey1Server = "com.sun.jersey" % "jersey-server" % "$JERSEY_ONE_VERSION"
-  val jersey1Servlet = "com.sun.jersey" % "jersey-servlet" % "$JERSEY_ONE_VERSION"
+  val jersey1Client = "com.sun.jersey" % "jersey-client" % versions.jersey1
+  val jersey1Core = "com.sun.jersey" % "jersey-core" % versions.jersey1
+  val jersey1Server = "com.sun.jersey" % "jersey-server" % versions.jersey1
+  val jersey1Servlet = "com.sun.jersey" % "jersey-servlet" % versions.jersey1
 
-  val jersey1Guice = "com.sun.jersey.contribs" % "jersey-guice" % "$JERSEY_ONE_VERSION"
-  val jersey1Mulitpart = "com.sun.jersey.contribs" % "jersey-multipart" % "$JERSEY_ONE_VERSION"
-  val jersey1Spring = "com.sun.jersey.contribs" % "jersey-spring" % "$JERSEY_ONE_VERSION"
+  val jersey1Guice = "com.sun.jersey.contribs" % "jersey-guice" % versions.jersey1
+  val jersey1Mulitpart = "com.sun.jersey.contribs" % "jersey-multipart" % versions.jersey1
+  val jersey1Spring = "com.sun.jersey.contribs" % "jersey-spring" % versions.jersey1
 
-  val jersey1OauthClient = "com.sun.jersey.contribs.jersey-oauth" % "oauth-client" % "$JERSEY_ONE_VERSION"
-  val jersey1OauthSignature = "com.sun.jersey.contribs.jersey-oauth" % "oauth-signature" % "$JERSEY_ONE_VERSION"
-  val jersey1OauthServer = "com.sun.jersey.contribs.jersey-oauth" % "oauth-server" % "$JERSEY_ONE_VERSION"
+  val jersey1OauthClient = "com.sun.jersey.contribs.jersey-oauth" % "oauth-client" % versions.jersey1
+  val jersey1OauthSignature = "com.sun.jersey.contribs.jersey-oauth" % "oauth-signature" % versions.jersey1
+  val jersey1OauthServer = "com.sun.jersey.contribs.jersey-oauth" % "oauth-server" % versions.jersey1
 
   val jaxbImpl = "com.sun.xml.bind" % "jaxb-impl" % "2.2.8-b01"
   val jaxbXjc = "com.sun.xml.bind" % "jaxb-xjc" % "2.2.8-b01"
@@ -200,20 +193,20 @@ object Dependencies {
   val paranamer = "com.thoughtworks.paranamer" % "paranamer" % "2.6"
   val xstream = "com.thoughtworks.xstream" % "xstream" % "1.4.7"
 
-  val akkaActor = "com.typesafe.akka" % "akka-actor" % "$AKKA_VERSION"
-  val akkaRemote = "com.typesafe.akka" % "akka-remote" % "$AKKA_VERSION"
-  val akkaSlf4j = "com.typesafe.akka" % "akka-slf4j" % "$AKKA_VERSION"
+  val akkaActor = "com.typesafe.akka" % "akka-actor" % versions.akka
+  val akkaRemote = "com.typesafe.akka" % "akka-remote" % versions.akka
+  val akkaSlf4j = "com.typesafe.akka" % "akka-slf4j" % versions.akka
 
   val proweb = "com.qas" % "proweb" % "4.0"
 
-  val swaggerAnnotations = "com.wordnik" %% "swagger-annotations" % "$SWAGGER_VERSION"
-  val swaggerCore = "com.wordnik" %% "swagger-core" % "$SWAGGER_VERSION"
-  val swaggerJaxrs = "com.wordnik" %% "swagger-jaxrs" % "$SWAGGER_VERSION"
-  val swaggerJerseyJaxrs = "com.wordnik" %% "swagger-jersey-jaxrs" % "$SWAGGER_VERSION"
-  val swaggerJersey2Jaxrs = "com.wordnik" %% "swagger-jersey2-jaxrs" % "$SWAGGER_VERSION"
-  val swaggerOauth2Server = "com.wordnik" %% "swagger-oauth2-server" % "$SWAGGER_VERSION"
-  val swaggerScalaServlet = "com.wordnik" %% "swagger-scala-servlet" % "$SWAGGER_VERSION"
-  val swaggerServlet = "com.wordnik" %% "swagger-servlet" % "$SWAGGER_VERSION"
+  val swaggerAnnotations = "com.wordnik" %% "swagger-annotations" % versions.swagger
+  val swaggerCore = "com.wordnik" %% "swagger-core" % versions.swagger
+  val swaggerJaxrs = "com.wordnik" %% "swagger-jaxrs" % versions.swagger
+  val swaggerJerseyJaxrs = "com.wordnik" %% "swagger-jersey-jaxrs" % versions.swagger
+  val swaggerJersey2Jaxrs = "com.wordnik" %% "swagger-jersey2-jaxrs" % versions.swagger
+  val swaggerOauth2Server = "com.wordnik" %% "swagger-oauth2-server" % versions.swagger
+  val swaggerScalaServlet = "com.wordnik" %% "swagger-scala-servlet" % versions.swagger
+  val swaggerServlet = "com.wordnik" %% "swagger-servlet" % versions.swagger
 
   val yammerMetricsAnnotation = "com.yammer.metrics" % "metrics-annotation" % versions.yammerMetrics
   val yammerMetricsCore = "com.yammer.metrics" % "metrics-core" % versions.yammerMetrics
@@ -241,7 +234,7 @@ object Dependencies {
   val commonsNet = "commons-net" % "commons-net" % "3.3"
 
   val dom4j = "dom4j" % "dom4j" % "1.6.1"
-  val freemarker = "freemarker" % "freemarker" % "2.3.15"
+  val oldFreemarker = "freemarker" % "freemarker" % "2.3.15"
 
   val cucumberAndroid = "info.cukes" % "cucumber-android" % versions.cucumber
   val cucumberClojure = "info.cukes" % "cucumber-clojure" % versions.cucumber
@@ -338,8 +331,8 @@ object Dependencies {
 
   val opencsv = "opencsv" % "opencsv" % "1.8"
 
-  val antlr = "org.antlr" % "antlr" % "3.5.1"
-  val antlrStringtemplate = "org.antlr" % "stringtemplate" % "4.0.2"
+  val antlr3 = "org.antlr" % "antlr" % "3.5.1"
+  val antlrStringtemplate4 = "org.antlr" % "stringtemplate" % "4.0.2"
 
   val jakartaOro = "org.apache" % "jakarta-oro" % "2.0.8"
 
@@ -614,7 +607,7 @@ object Dependencies {
 
   val snakeYaml = "org.yaml" % "snakeyaml" % "1.13"
 
-  val staxApi = "stax" % "stax-api" % "1.0.1"
+  val oldStaxApi = "stax" % "stax-api" % "1.0.1"
 
   val taglibsStandard = "taglibs" % "standard" % "1.1.2"
 
@@ -635,14 +628,21 @@ object Dependencies {
 object Settings {
 
   import Resolvers._
-  import Dependencies.versions
+  import Dependencies._
 
   val defaultSettings = Defaults.coreDefaultSettings ++ Seq(
+    organizationName := "Baleio Inc.",
+    organizationHomepage := Some(url("http://www.bale.io")),
     scalaVersion := versions.scala,
     resolvers := allResolvers,
+    conflictManager := ConflictManager.strict,
+    exportJars := true,
+    autoScalaLibrary := false,
+    dependencyOverrides ++= Seq(Dependencies),
     scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature"),
     scalacOptions in(Compile, doc) ++= Seq("-external-urls:scala=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", versions.java, "-target", versions.java, "-Xlint:all"),
+    javacOptions in(Compile, doc) ++= Seq("-external-urls:java=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
     publishMavenStyle := true,
     publishTo <<= version {
       (v: String) =>
@@ -651,8 +651,6 @@ object Settings {
         else
           Some(releases)
     },
-    credentials += Credentials(Path.userHome / ".ivy2" / ".auth-acme"),
-    organizationName := "ACME Inc.",
-    organizationHomepage := Some(url("http://www.acme.com"))
+    credentials += Credentials(Path.userHome / ".ivy2" / ".auth-baleio")
   )
 }
