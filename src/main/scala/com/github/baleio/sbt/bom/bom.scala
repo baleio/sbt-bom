@@ -632,7 +632,7 @@ object Settings {
   import Resolvers._
   import Dependencies._
 
-  val defaultSettings = Defaults.coreDefaultSettings ++ Seq(
+  val coreDefaultSettings = Defaults.coreDefaultSettings ++ Seq(
     organizationName := "Baleio Inc.",
     organizationHomepage := Some(url("http://www.bale.io")),
     scalaVersion := versions.scala,
@@ -640,7 +640,7 @@ object Settings {
     conflictManager := ConflictManager.strict,
     exportJars := true,
     autoScalaLibrary := false,
-    dependencyOverrides ++= Seq(Dependencies),
+    //dependencyOverrides ++= Seq(Dependencies),
     scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature"),
     scalacOptions in(Compile, doc) ++= Seq("-external-urls:scala=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", versions.java, "-target", versions.java, "-Xlint:all"),
