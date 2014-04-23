@@ -168,7 +168,7 @@ object Dependencies {
   
   val base64 = "com.mindprod" % "base64" % "1.6"
   
-  val mockrunnerJdbc = "com.mockrunner" % "mockrunner-jdbc" % "1.0.0"
+  val mockrunnerJdbc = "com.mockrunner" % "mockrunner-jdbc" % "1.0.0" % "test"
 
   val checkstyle = "com.puppycrawl.tools" % "checkstyle" % "5.7"
 
@@ -234,24 +234,25 @@ object Dependencies {
   val commonsNet = "commons-net" % "commons-net" % "3.3"
 
   val dom4j = "dom4j" % "dom4j" % "1.6.1"
+
   val oldFreemarker = "freemarker" % "freemarker" % "2.3.15"
 
-  val cucumberAndroid = "info.cukes" % "cucumber-android" % versions.cucumber
-  val cucumberClojure = "info.cukes" % "cucumber-clojure" % versions.cucumber
-  val cucumberCore = "info.cukes" % "cucumber-core" % versions.cucumber
-  val cucumberGroovy = "info.cukes" % "cucumber-groovy" % versions.cucumber
-  val cucumberGuice = "info.cukes" % "cucumber-guice" % versions.cucumber
-  val cucumberIoke = "info.cukes" % "cucumber-ioke" % versions.cucumber
-  val cucumberJava = "info.cukes" % "cucumber-java" % versions.cucumber
-  val cucumberJruby = "info.cukes" % "cucumber-jruby" % versions.cucumber
-  val cucumberJunit = "info.cukes" % "cucumber-junit" % versions.cucumber
-  val cucumberJython = "info.cukes" % "cucumber-jython" % versions.cucumber
-  val cucumberNeedle = "info.cukes" % "cucumber-needle" % versions.cucumber
-  val cucumberOpenejb = "info.cukes" % "cucumber-openejb" % versions.cucumber
-  val cucumberPicocontainer = "info.cukes" % "cucumber-picocontainer" % versions.cucumber
-  val cucumberScala = "info.cukes" % "cucumber-scala" % versions.cucumber
-  val cucumberSpring = "info.cukes" % "cucumber-spring" % versions.cucumber
-  val cucumberWEld = "info.cukes" % "cucumber-weld" % versions.cucumber
+  val cucumberAndroid = "info.cukes" % "cucumber-android" % versions.cucumber % "test"
+  val cucumberClojure = "info.cukes" % "cucumber-clojure" % versions.cucumber % "test"
+  val cucumberCore = "info.cukes" % "cucumber-core" % versions.cucumber % "test"
+  val cucumberGroovy = "info.cukes" % "cucumber-groovy" % versions.cucumber % "test"
+  val cucumberGuice = "info.cukes" % "cucumber-guice" % versions.cucumber % "test"
+  val cucumberIoke = "info.cukes" % "cucumber-ioke" % versions.cucumber % "test"
+  val cucumberJava = "info.cukes" % "cucumber-java" % versions.cucumber % "test"
+  val cucumberJruby = "info.cukes" % "cucumber-jruby" % versions.cucumber % "test"
+  val cucumberJunit = "info.cukes" % "cucumber-junit" % versions.cucumber % "test"
+  val cucumberJython = "info.cukes" % "cucumber-jython" % versions.cucumber % "test"
+  val cucumberNeedle = "info.cukes" % "cucumber-needle" % versions.cucumber % "test"
+  val cucumberOpenejb = "info.cukes" % "cucumber-openejb" % versions.cucumber % "test"
+  val cucumberPicocontainer = "info.cukes" % "cucumber-picocontainer" % versions.cucumber % "test"
+  val cucumberScala = "info.cukes" % "cucumber-scala" % versions.cucumber % "test"
+  val cucumberSpring = "info.cukes" % "cucumber-spring" % versions.cucumber % "test"
+  val cucumberWEld = "info.cukes" % "cucumber-weld" % versions.cucumber % "test"
 
   val nettyAll = "io.netty" % "netty-all" % versions.netty
   val nettyExample = "io.netty" % "netty-example" % versions.netty
@@ -286,6 +287,7 @@ object Dependencies {
 
   val servletApi = "javax.servlet" % "servlet-api" % "2.5"
   val javaxServletApi = "javax.servlet" % "javax.servlet-api" % "3.1.0"
+
   val jstl = "javax.servlet" % "jstl" % "1.2"
   val jspApi = "javax.servlet.jsp" % "jsp-api" % "2.2.1"
   val jstlApi = "javax.servlet.jsp.jstl" % "jstl-api" % "1.2"
@@ -308,7 +310,7 @@ object Dependencies {
 
   val jodaTime = "joda-time" % "joda-time" % "2.3"
 
-  val junit = "junit" % "junit" % "4.11"
+  val junit = "junit" % "junit" % "4.11" % "test"
 
   val jxl = "jxl" % "jxl" % "2.6.10"
 
@@ -376,8 +378,8 @@ object Dependencies {
   val camelSmpp = "org.apache.camel" % "camel-smpp" % versions.camel
   val camelSolr = "org.apache.camel" % "camel-solr" % versions.camel
   val camelSpring = "org.apache.camel" % "camel-spring" % versions.camel
-  val camelTest = "org.apache.camel" % "camel-test" % versions.camel
-  val camelTestng = "org.apache.camel" % "camel-testng" % versions.camel
+  val camelTest = "org.apache.camel" % "camel-test" % versions.camel % "test"
+  val camelTestng = "org.apache.camel" % "camel-testng" % versions.camel % "test"
   val camelVelocity = "org.apache.camel" % "camel-velocity" % versions.camel
   val camelWeb = "org.apache.camel" % "camel-web" % versions.camel
   val camelWebsocket = "org.apache.camel" % "camel-websocket" % versions.camel
@@ -405,8 +407,8 @@ object Dependencies {
   val cxfRtTransportsHttp = "org.apache.cxf" % "cxf-rt-transports-http" % versions.cxf
   val cxfRtTransportsHttpJetty = "org.apache.cxf" % "cxf-rt-transports-http-jetty" % versions.cxf
   val cxfRtWsAddr = "org.apache.cxf" % "cxf-rt-ws-addr" % versions.cxf
-  val cxfTestutils = "org.apache.cxf" % "cxf-testutils" % versions.cxf
-  val cxfSystestsJaxrs = "org.apache.cxf.systests" % "cxf-systests-jaxrs" % versions.cxf
+  val cxfTestutils = "org.apache.cxf" % "cxf-testutils" % versions.cxf % "test"
+  val cxfSystestsJaxrs = "org.apache.cxf.systests" % "cxf-systests-jaxrs" % versions.cxf % "test"
 
   val geronimoAnnotation10Spec = "org.apache.geronimo.specs" % "geronimo-annotation_1.0_spec" % "1.1.1"
   val geronimoJ2ee11Spec = "org.apache.geronimo.specs" % "geronimo-j2ee-management_1.1_spec" % "1.0.1"
@@ -460,7 +462,7 @@ object Dependencies {
 
   val jettison = "org.codehaus.jettison" % "jettison" % "1.3.5"
 
-  val easymock = "org.easymock" % "easymock" % "3.2"
+  val easymock = "org.easymock" % "easymock" % "3.2" % "test"
 
   val jettyAnt = "org.eclipse.jetty" % "jetty-ant" % versions.jetty
   val jettyDistribution = "org.eclipse.jetty" % "jetty-distribution" % versions.jetty
@@ -517,7 +519,7 @@ object Dependencies {
   val mybatisGuice = "org.mybatis" % "mybatis-guice" %"3.5"
   val mybatisSpring = "org.mybatis" % "mybatis-spring" %"1.2.2"
 
-  val mockitoAll = "org.mockito" % "mockito-all" % "1.9.5"
+  val mockitoAll = "org.mockito" % "mockito-all" % "1.9.5" % "test"
   
   val mongoJavaDriver = "org.mongodb" % "mongo-java-driver" % "2.11.4"
   
@@ -536,14 +538,14 @@ object Dependencies {
   val asmCommons = "org.ow2.asm" % "asm-commons" % versions.asm
   val asmAnalysis = "org.ow2.asm" % "asm-analysis" % versions.asm
 
-  val powermockApi = "org.powermock" % "powermock-api" % versions.powermock
-  val powermockCore = "org.powermock" % "powermock-core" % versions.powermock
-  val powermockModuleJunit4 = "org.powermock" % "powermock-module-junit4" % versions.powermock
-  val powermockModuleJunit4Common = "org.powermock" % "powermock-module-junit4-common" % versions.powermock
-  val powermockModuleTesting = "org.powermock" % "powermock-module-testng" % versions.powermock
-  val powermockModuleTestngCommon = "org.powermock" % "powermock-module-testng-common" % versions.powermock
-  val powermockEasymockReleaseFull = "org.powermock" % "powermock-easymock-release-full" % versions.powermock
-  val powermockMockitoReleaseFull = "org.powermock" % "powermock-mockito-release-full" % versions.powermock
+  val powermockApi = "org.powermock" % "powermock-api" % versions.powermock % "test"
+  val powermockCore = "org.powermock" % "powermock-core" % versions.powermock % "test"
+  val powermockModuleJunit4 = "org.powermock" % "powermock-module-junit4" % versions.powermock % "test"
+  val powermockModuleJunit4Common = "org.powermock" % "powermock-module-junit4-common" % versions.powermock % "test"
+  val powermockModuleTesting = "org.powermock" % "powermock-module-testng" % versions.powermock % "test"
+  val powermockModuleTestngCommon = "org.powermock" % "powermock-module-testng-common" % versions.powermock % "test"
+  val powermockEasymockReleaseFull = "org.powermock" % "powermock-easymock-release-full" % versions.powermock % "test"
+  val powermockMockitoReleaseFull = "org.powermock" % "powermock-mockito-release-full" % versions.powermock % "test"
 
   val quartz = "org.quartz-scheduler" % "quartz" % "2.2.1"
 
@@ -575,7 +577,7 @@ object Dependencies {
   val springJms = "org.springframework" % "spring-jms" % versions.spring
   val springOrm = "org.springframework" % "spring-orm" % versions.spring
   val springOxm = "org.springframework" % "spring-oxm" % versions.spring
-  val springTest = "org.springframework" % "spring-test" % versions.spring
+  val springTest = "org.springframework" % "spring-test" % versions.spring % "test"
   val springTx = "org.springframework" % "spring-tx" % versions.spring
   val springWeb = "org.springframework" % "spring-web" % versions.spring
   val springWebmvc = "org.springframework" % "spring-webmvc" % versions.spring
@@ -603,7 +605,7 @@ object Dependencies {
 
   val springSecurityOauth2 = "org.springframework.security.oauth" % "spring-security-oauth2" % versions.springSecurityOauth
 
-  val testng = "org.testng" % "testng" % "6.8.8"
+  val testng = "org.testng" % "testng" % "6.8.8" % "test"
 
   val snakeYaml = "org.yaml" % "snakeyaml" % "1.13"
 
@@ -618,7 +620,7 @@ object Dependencies {
 
   val xmlApis = "xml-apis" % "xml-apis" % "1.4.01"
 
-  val xmlunit = "xmlunit" % "xmlunit" % "1.5"
+  val xmlunit = "xmlunit" % "xmlunit" % "1.5" % "test"
 
   val xom = "xom" % "xom" % "1.2.5"
 
