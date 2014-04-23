@@ -71,15 +71,15 @@ object Dependencies {
   val oldAsmUtil = "asm" % "asm-util" % "3.3.1"
 
   val batik = "batik" % "batik" % "1.5"
-  val batikBridge = "batik" % "batik-brdige" % "$BATIK_VERSION"
-  val batikCss = "batik" % "batik-css" % "$BATIK_VERSION"
-  val batikDom = "batik" % "batik-dom" % "$BATIK_VERSION"
-  val batikExt = "batik" % "batik-ext" % "$BATIK_VERSION"
-  val batikParser = "batik" % "batik-parser" % "$BATIK_VERSION"
-  val batikRasterizer = "batik" % "batik-rasterizer" % "$BATIK_VERSION"
-  val batikScript = "batik" % "batik-script" % "$BATIK_VERSION"
-  val batikTranscoder = "batik" % "batik-transcoder" % "$BATIK_VERSION"
-  val batikUtil = "batik" % "batik-util" % "$BATIK_VERSION"
+  val batikBridge = "batik" % "batik-brdige" % versions.batik
+  val batikCss = "batik" % "batik-css" % versions.batik
+  val batikDom = "batik" % "batik-dom" % versions.batik
+  val batikExt = "batik" % "batik-ext" % versions.batik
+  val batikParser = "batik" % "batik-parser" % versions.batik
+  val batikRasterizer = "batik" % "batik-rasterizer" % versions.batik
+  val batikScript = "batik" % "batik-script" % versions.batik
+  val batikTranscoder = "batik" % "batik-transcoder" % versions.batik
+  val batikUtil = "batik" % "batik-util" % versions.batik
 
   val oldBcmailJdk14 = "bouncycastle" % "bcmail-jdk14" % "138"
   val oldBcprovJdk14 = "bouncycastle" % "bcprov-jdk14" % "140"
@@ -87,8 +87,8 @@ object Dependencies {
 
   val c3p0 = "c3p0" % "c3p0" % "0.9.1.2"
 
-  val cglib = "cglib" % "cglib" % "$CGLIB_VERSION"
-  val cglibNodep = "cglib" % "cglib-nodep" % "$CGLIB_VERSION"
+  val cglib = "cglib" % "cglib" % versions.cglib
+  val cglibNodep = "cglib" % "cglib-nodep" % versions.cglib
 
   val logbackClassic = "ch.qos.logback" % "logback-classic" % versions.logback
   val logbackCore = "ch.qos.logback" % "logback-core" % versions.logback
@@ -253,13 +253,13 @@ object Dependencies {
   val cucumberSpring = "info.cukes" % "cucumber-spring" % versions.cucumber
   val cucumberWEld = "info.cukes" % "cucumber-weld" % versions.cucumber
 
-  val nettyAll = "io.netty" % "netty-all" % "$NETTY_VERSION"
-  val nettyExample = "io.netty" % "netty-example" % "$NETTY_VERSION"
-  val nettyHandler = "io.netty" % "netty-handler" % "$NETTY_VERSION"
-  val nettyCodec = "io.netty" % "netty-codec" % "$NETTY_VERSION"
-  val nettyTransport = "io.netty" % "netty-transport" % "$NETTY_VERSION"
-  val nettyBugger = "io.netty" % "netty-buffer" % "$NETTY_VERSION"
-  val nettyCommon = "io.netty" % "netty-common" % "$NETTY_VERSION"
+  val nettyAll = "io.netty" % "netty-all" % versions.netty
+  val nettyExample = "io.netty" % "netty-example" % versions.netty
+  val nettyHandler = "io.netty" % "netty-handler" % versions.netty
+  val nettyCodec = "io.netty" % "netty-codec" % versions.netty
+  val nettyTransport = "io.netty" % "netty-transport" % versions.netty
+  val nettyBugger = "io.netty" % "netty-buffer" % versions.netty
+  val nettyCommon = "io.netty" % "netty-common" % versions.netty
 
   val javassist = "javassist" % "javassist" % "3.12.1.GA"
 
