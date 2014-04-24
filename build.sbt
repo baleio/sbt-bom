@@ -21,6 +21,8 @@ val snapshots = "Snapshots" at "http://nexus.baleio.com/content/repositories/bal
 
 resolvers ++= Seq(mirror, releases, thirdParty, snapshots)
 
+//libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
+
 publishMavenStyle := true
 
 publishTo <<= version { (v: String) =>
@@ -30,4 +32,4 @@ publishTo <<= version { (v: String) =>
     Some(releases)
 }
 
-credentials += Credentials(Path.userHome / ".ivy2" / ".auth-baleio")
+credentials += Credentials(Path.userHome / ".sbt" / ".auth-baleio")
