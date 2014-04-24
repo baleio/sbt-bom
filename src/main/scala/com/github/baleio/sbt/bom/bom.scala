@@ -847,6 +847,96 @@ object Dependencies {
   depOverrides = depOverrides ++ Set(xpp3min)
 }
 
+object Plugins {
+  // IDEs
+  val sbtEclipse = "com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.4.0"
+  val sbtIdea = "com.github.mpeltonen" % "sbt-idea" % "1.6.0"
+  val sbtNetbeans = "org.netbeans" %% "sbt-netbeans-plugin" % "0.1.4"
+  val sbtSublime = "com.orrsella" % "sbt-sublime" % "1.0.9"
+
+  // Web
+  val sbtWeb = "com.earldouglas" % "xsbt-web-plugin" % "0.9.0"
+  val sbtCloudbees = "eu.getintheloop" %% "sbt-cloudbees-plugin" % "0.4.0"
+
+  // Test
+  val sbtCucumber = "templemore" % "sbt-cucumber-plugin" % "0.8.0"
+  val sbtMultiJvm = "com.typesafe.sbt" % "sbt-multi-jvm" % "0.3.8"
+  val sbtTestng = "de.johoop" % "sbt-testng-plugin" % "3.0.0"
+
+  // Static Code Analysis
+  val cpd4sbt = "de.johoop" % "cpd4sbt" % "1.1.4"
+  val findbugs4sbt = "de.johoop" % "findbugs4sbt" % "1.3.0"
+  val scalastyleSbt = "org.scalastyle" %% "scalastyle-sbt-plugin" % "0.4.0"
+  val sbtStats = "com.orrsella" % "sbt-stats" % "1.0.5"
+
+  // One Jar
+  val sbtAssembly = "com.eed3si9n" % "sbt-assembly" % "0.11.2"
+  val sbtAppbundle = "de.sciss" % "sbt-appbundle" % "1.0.1"
+  val sbtOnejar = "org.scala-sbt.plugins" % "sbt-onejar" % "0.8"
+
+  // Frontend Development
+  val coffescriptSbt = "me.lessis" % "coffeescripted-sbt" % "0.2.3"
+  val lessSbt = "me.lessis" % "less-sbt" % "0.2.2"
+  val sbtStyles = "com.github.btd" %% "sbt-styles-plugin" % "0.0.3"
+  val sbtEmberjs = "com.github.stefri" % "sbt-emberjs" % "0.4"
+  val sbtYuiCompressor = "in.drajit.sbt" % "sbt-yui-compressor" % "0.2.0"
+  val sbtRequirejs = "org.scalatra.requirejs" % "sbt-requirejs" % "0.0.3"
+  val sbtVaadin = "org.vaadin.sbt" % "sbt-vaadin-plugin" % "1.0.0"
+
+  // Release
+  val sbtNative = "com.typesafe.sbt" % "sbt-native-packager" % "0.7.0-RC2"
+  val sbtStartScript = "com.typesafe.sbt" % "sbt-start-script" % "0.10.0"
+  val sbtPack = "org.xerial.sbt" % "sbt-pack" % "0.5.1"
+  val sbtRelease = "com.github.gseitz" % "sbt-release" % "0.8.3"
+  val aetherDeploy = "no.arktekk.sbt" % "aether-deploy" % "0.11"
+
+  // System
+  val sbtGit = "com.typesafe.sbt" % "sbt-git" % "0.6.2"
+
+  // Code Generator
+  val sbtXjc = "org.scala-sbt.plugins" % "sbt-xjc" % "0.5"
+  val sbtThrift = "com.github.bigtoast" % "sbt-thrift" % "0.6"
+  val sbtAntlr = "com.github.stefri" % "sbt-antlr" % "0.5"
+  val sbtAntlr4 = "com.simplytyped" % "sbt-antlr4" % "0.7.1"
+  val sbtAvro = "com.cavorite" % "sbt-avro" % "0.3.2"
+  val sbtProtobuf = "com.github.gseitz" % "sbt-protobuf" % "0.3.2"
+  val sbtScalabuff = "com.github.sbt" %% "sbt-scalabuff" % "0.2"
+  val sbtFmpp = "com.github.sbt" %% "sbt-fmpp" % "0.3"
+
+  // Database
+  val sbtDbdeploy = "mrken" %% "sbt-dbdeploy" % "0.1"
+  val sbtLiquibase = "com.github.bigtoast" % "sbt-liquibase" % "0.5"
+  val sbtFlyaway = "org.flywaydb" % "flyway-sbt" % "3.0"
+
+  // Documentation
+  val sbtSite = "com.typesafe.sbt" % "sbt-site" % "0.7.2"
+
+  // Library Dependency
+  val sbtDependencyGraph = "net.virtual-void" % "sbt-dependency-graph" % "0.7.4"
+  val sbtLock = "com.github.tkawachi" % "sbt-lock" % "0.1.1"
+  val sbtUpdates = "com.timushev.sbt" % "sbt-updates" % "0.1.5"
+  val sbtDirtyMoney = "com.eed3si9n" % "sbt-dirty-money" % "0.1.0"
+  val lsSbt = "me.lessis" % "ls-sbt" % "0.1.3"
+
+  // Utility
+  val sbtAboutPlugins = "com.github.jozic" % "sbt-about-plugins" % "0.1.0"
+
+  // Code Coverage
+  val scct = "ch.craven" %% "scct-plugin" % "0.2"
+  val sbtScoverage = "org.scoverage" %% "sbt-scoverage" % "0.98.2"
+  val jacoco4sbt = "de.johoop" % "jacoco4sbt" % "2.1.4"
+
+  // Android
+  val sbtAndroid = "org.scala-sbt" % "sbt-android-plugin" % "0.6.2"
+  val androidSdk = "com.hanhuy.sbt" % "android-sdk-plugin" % "1.2.14"
+
+  // Build Interoperability
+  val ant4Sbt = "de.johoop" % "ant4sbt" % "1.1.2"
+
+  // OSGI
+  val sbtOsgi = "com.typesafe.sbt" % "sbt-osgi" % "0.7.0"
+}
+
 object Settings {
 
   import Resolvers._
