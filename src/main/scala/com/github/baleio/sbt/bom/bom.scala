@@ -59,20 +59,21 @@ object Dependencies {
     val yammerMetrics = "2.2.0"
   }
 
-
+  var depOverrides = Set[ModuleID]()
+  
   val aopalliance = "aopalliance" % "aopalliance" % "1.0"
- dependencyOverrides += aopalliance
+  depOverrides = depOverrides ++ Set(aopalliance)
 
   val oldAntlr = "antlr" % "antlr" % "2.7.7"
   val oldAntlrStringtemplate = "antlr" % "stringtemplate" % "3.2.1"
-  dependencyOverrides ++= Set(oldAntlr, oldAntlrStringtemplate)
+  depOverrides = depOverrides ++ Set(oldAntlr, oldAntlrStringtemplate)
 
   val oldAsm = "asm" % "asm" % "3.3.1"
   val oldAsmAttrs = "asm" % "asm-attrs" % "2.2.3"
   val oldAsmCommons = "asm" % "asm-commons" % "3.3.1"
   val oldAsmTree = "asm" % "asm-tree" % "3.3.1"
   val oldAsmUtil = "asm" % "asm-util" % "3.3.1"
-  dependencyOverrides ++= Set(oldAsm, oldAsmAttrs, oldAsmCommons, oldAsmTree, oldAsmUtil)
+  depOverrides = depOverrides ++ Set(oldAsm, oldAsmAttrs, oldAsmCommons, oldAsmTree, oldAsmUtil)
 
   val batik = "batik" % "batik" % "1.5"
   val batikBridge = "batik" % "batik-brdige" % Versions.batik
@@ -84,20 +85,20 @@ object Dependencies {
   val batikScript = "batik" % "batik-script" % Versions.batik
   val batikTranscoder = "batik" % "batik-transcoder" % Versions.batik
   val batikUtil = "batik" % "batik-util" % Versions.batik
-  dependencyOverrides ++= Set(batik, batikBridge, batikCss, batikDom, batikExt,
+  depOverrides = depOverrides ++ Set(batik, batikBridge, batikCss, batikDom, batikExt,
     batikParser, batikRasterizer, batikScript, batikTranscoder, batikUtil)
 
   val oldBcmailJdk14 = "bouncycastle" % "bcmail-jdk14" % "138"
   val oldBcprovJdk14 = "bouncycastle" % "bcprov-jdk14" % "140"
   val oldbctspJdk14 = "bouncycastle" % "bctsp-jdk14" % "138"
-  dependencyOverrides ++= Set(oldBcmailJdk14, oldBcprovJdk14, oldbctspJdk14)
+  depOverrides = depOverrides ++ Set(oldBcmailJdk14, oldBcprovJdk14, oldbctspJdk14)
 
   val oldC3p0 = "c3p0" % "c3p0" % "0.9.1.2"
-  dependencyOverrides += oldC3p0
+  depOverrides = depOverrides ++ Set(oldC3p0)
 
   val oldCglib = "cglib" % "cglib" % Versions.cglib
   val oldCglibNodep = "cglib" % "cglib-nodep" % Versions.cglib
-  dependencyOverrides ++= Set(oldCglib, oldCglibNodep)
+  depOverrides = depOverrides ++ Set(oldCglib, oldCglibNodep)
 
   val logbackClassic = "ch.qos.logback" % "logback-classic" % Versions.logback
   val logbackCore = "ch.qos.logback" % "logback-core" % Versions.logback
@@ -107,11 +108,11 @@ object Dependencies {
   val logbackMongodbAccess = "ch.qos.logback.contrib" % "logback-mongodb-access" % Versions.logback
   val logbackMongodbClassic = "ch.qos.logback.contrib" % "logback-mongodb-classic" % Versions.logback
   val logbackMongodbCore = "ch.qos.logback.contrib" % "logback-mongodb-core" % Versions.logback
-  dependencyOverrides ++= Set(logbackClassic, logbackCore, logbackJackson, logbackJsonClassic, logbackJsonCore,
+  depOverrides = depOverrides ++ Set(logbackClassic, logbackCore, logbackJackson, logbackJsonClassic, logbackJsonCore,
     logbackMongodbAccess, logbackMongodbClassic, logbackMongodbCore)
 
   val awsJavaSdk = "com.amazonaws" % "aws-java-sdk" % "1.7.3"
-  dependencyOverrides += awsJavaSdk
+  depOverrides = depOverrides ++ Set(awsJavaSdk)
 
   val metricsAnnotation = "com.codahale.metrics" % "metrics-annotation" % Versions.metrics
   val metricsCore = "com.codahale.metrics" % "metrics-core" % Versions.metrics
@@ -130,7 +131,7 @@ object Dependencies {
   val metricsLogback = "com.codahale.metrics" % "metrics-logback" % Versions.metrics
   val metricsServlet = "com.codahale.metrics" % "metrics-servlet" % Versions.metrics
   val metricsServlets = "com.codahale.metrics" % "metrics-servlets" % Versions.metrics
-  dependencyOverrides ++= Set(metricsAnnotation, metricsCore, metricsEhcache, metricsGanglia, metricsGraphite,
+  depOverrides = depOverrides ++ Set(metricsAnnotation, metricsCore, metricsEhcache, metricsGanglia, metricsGraphite,
     metricsHealthchecks, metricsHttpclient, metricsJdbi, metricsJersey, metricsJetty8, metricsJetty9,
     metricsJson, metricsJvm, metricsLog4j, metricsLogback, metricsServlet, metricsServlets)
 
@@ -150,18 +151,18 @@ object Dependencies {
   val jacksonJaxrsXmlProvider = "com.fasterxml.jackson.jaxrs" % "jackson-jaxrs-xml-provider" % Versions.jackson
   val jacksonModuleJaxbAnnotations = "com.fasterxml.jackson.module" % "jackson-module-jaxb-annotations" % Versions.jackson
   val jacksonModuleAfterburner = "com.fasterxml.jackson.module" % "jackson-module-afterburner" % Versions.jackson
-  dependencyOverrides ++= Set(jacksonAnnotations, jacksonCore, jacksonDatabind, jacksonDataformatXml, jacksonDataformatYaml,
+  depOverrides = depOverrides ++ Set(jacksonAnnotations, jacksonCore, jacksonDatabind, jacksonDataformatXml, jacksonDataformatYaml,
     jacksonDatatypeGuava, jacksonDatatypeHppc, jacksonDatatypeJoda, jacksonDatatypeJsonOrg, jacksonDatatypeJsr353, jacksonJaxrsBase,
     jacksonJaxrsJsonProvider, jacksonJaxrsSmileProvider, jacksonJaxrsXmlProvider, jacksonModuleAfterburner, jacksonModuleJaxbAnnotations)
 
   val slugify = "com.github.slugify" % "slugify" % "2.1.2"
-  dependencyOverrides += slugify
+  depOverrides = depOverrides ++ Set(slugify)
 
   val googleCollections = "com.google.collections" % "google-collections" % "1.0"
-  dependencyOverrides += googleCollections
+  depOverrides = depOverrides ++ Set(googleCollections)
 
   val guava = "com.google.guava" % "guava" % "16.0.1"
-  dependencyOverrides += guava
+  depOverrides = depOverrides ++ Set(guava)
 
   val guice = "com.google.inject" % "guice" % Versions.guice
   val guiceAssistedInject = "com.google.inject.extensions" % "guice-assistedinject" % Versions.guice
@@ -169,76 +170,76 @@ object Dependencies {
   val guiceJndi = "com.google.inject.extensions" % "guice-jndi" % Versions.guice
   val guiceMultibindings = "com.google.inject.extensions" % "guice-multibindings" % Versions.guice
   val guiceServlet = "com.google.inject.extensions" % "guice-servlet" % Versions.guice
-  dependencyOverrides ++= Set(guice, guiceAssistedInject, guiceJmx, guiceJndi, guiceMultibindings, guiceServlet)
+  depOverrides = depOverrides ++ Set(guice, guiceAssistedInject, guiceJmx, guiceJndi, guiceMultibindings, guiceServlet)
 
   val findbugs = "com.google.code.findbugs" % "findbugs" % "2.0.3"
   val findbugsAnnotations = "com.google.code.findbugs" % "findbugs-annotations" % "2.0.3"
   val findbugsJsr305 = "com.google.code.findbugs" % "jsr305" % "2.0.3"
-  dependencyOverrides ++= Set(findbugs, findbugsAnnotations, findbugsJsr305)
+  depOverrides = depOverrides ++ Set(findbugs, findbugsAnnotations, findbugsJsr305)
 
   val jsonSimple = "com.googlecode.json-simple" % "json-simple" % "1.1.1"
-  dependencyOverrides += jsonSimple
+  depOverrides = depOverrides ++ Set(jsonSimple)
 
   val pojosr = "com.googlecode.pojosr" % "de.kalpatec.pojosr.framework" % "0.2.1"
-  dependencyOverrides += pojosr
+  depOverrides = depOverrides ++ Set(pojosr)
 
   val hazelcast = "com.hazelcast" % "hazelcast" % "3.1.6"
-  dependencyOverrides += hazelcast
+  depOverrides = depOverrides ++ Set(hazelcast)
 
   val jsch = "com.jcraft" % "jsch" % "0.1.50"
-  dependencyOverrides += jsch
+  depOverrides = depOverrides ++ Set(jsch)
 
   val itext = "com.lowagie" % "itext" % "4.2.1"
-  dependencyOverrides += itext
+  depOverrides = depOverrides ++ Set(itext)
 
   val c3p0 = "com.mchange" % "c3p0" % "0.9.2.1"
-  dependencyOverrides += c3p0
+  depOverrides = depOverrides ++ Set(c3p0)
 
   val base64 = "com.mindprod" % "base64" % "1.6"
-  dependencyOverrides += base64
+  depOverrides = depOverrides ++ Set(base64)
 
   val mockrunnerJdbc = "com.mockrunner" % "mockrunner-jdbc" % "1.0.0" % "test"
-  dependencyOverrides += mockrunnerJdbc
+  depOverrides = depOverrides ++ Set(mockrunnerJdbc)
 
   val checkstyle = "com.puppycrawl.tools" % "checkstyle" % "5.7"
-  dependencyOverrides += checkstyle
+  depOverrides = depOverrides ++ Set(checkstyle)
 
   val rabbitmqAmqpClient = "com.rabbitmq" % "amqp-client" % "3.2.4"
-  dependencyOverrides += rabbitmqAmqpClient
+  depOverrides = depOverrides ++ Set(rabbitmqAmqpClient)
 
   val jersey1Client = "com.sun.jersey" % "jersey-client" % Versions.jersey1
   val jersey1Core = "com.sun.jersey" % "jersey-core" % Versions.jersey1
   val jersey1Server = "com.sun.jersey" % "jersey-server" % Versions.jersey1
   val jersey1Servlet = "com.sun.jersey" % "jersey-servlet" % Versions.jersey1
-  dependencyOverrides ++= Set(jersey1Client, jersey1Core, jersey1Server, jersey1Servlet)
+  depOverrides = depOverrides ++ Set(jersey1Client, jersey1Core, jersey1Server, jersey1Servlet)
 
   val jersey1Guice = "com.sun.jersey.contribs" % "jersey-guice" % Versions.jersey1
   val jersey1Mulitpart = "com.sun.jersey.contribs" % "jersey-multipart" % Versions.jersey1
   val jersey1Spring = "com.sun.jersey.contribs" % "jersey-spring" % Versions.jersey1
-  dependencyOverrides ++= Set(jersey1Guice, jersey1Mulitpart, jersey1Spring)
+  depOverrides = depOverrides ++ Set(jersey1Guice, jersey1Mulitpart, jersey1Spring)
 
   val jersey1OauthClient = "com.sun.jersey.contribs.jersey-oauth" % "oauth-client" % Versions.jersey1
   val jersey1OauthSignature = "com.sun.jersey.contribs.jersey-oauth" % "oauth-signature" % Versions.jersey1
   val jersey1OauthServer = "com.sun.jersey.contribs.jersey-oauth" % "oauth-server" % Versions.jersey1
-  dependencyOverrides ++= Set(jersey1OauthClient, jersey1OauthSignature, jersey1OauthServer)
+  depOverrides = depOverrides ++ Set(jersey1OauthClient, jersey1OauthSignature, jersey1OauthServer)
 
   val jaxbImpl = "com.sun.xml.bind" % "jaxb-impl" % "2.2.8-b01"
   val jaxbXjc = "com.sun.xml.bind" % "jaxb-xjc" % "2.2.8-b01"
-  dependencyOverrides ++= Set(jaxbImpl, jaxbXjc)
+  depOverrides = depOverrides ++ Set(jaxbImpl, jaxbXjc)
 
   val paranamer = "com.thoughtworks.paranamer" % "paranamer" % "2.6"
-  dependencyOverrides += paranamer
+  depOverrides = depOverrides ++ Set(paranamer)
 
   val xstream = "com.thoughtworks.xstream" % "xstream" % "1.4.7"
-  dependencyOverrides += xstream
+  depOverrides = depOverrides ++ Set(xstream)
 
   val akkaActor = "com.typesafe.akka" % "akka-actor" % Versions.akka
   val akkaRemote = "com.typesafe.akka" % "akka-remote" % Versions.akka
   val akkaSlf4j = "com.typesafe.akka" % "akka-slf4j" % Versions.akka
-  dependencyOverrides ++= Set(akkaActor, akkaRemote, akkaSlf4j)
+  depOverrides = depOverrides ++ Set(akkaActor, akkaRemote, akkaSlf4j)
 
   val proweb = "com.qas" % "proweb" % "4.0"
-  dependencyOverrides += proweb
+  depOverrides = depOverrides ++ Set(proweb)
 
   val swaggerAnnotations = "com.wordnik" %% "swagger-annotations" % Versions.swagger
   val swaggerCore = "com.wordnik" %% "swagger-core" % Versions.swagger
@@ -248,7 +249,7 @@ object Dependencies {
   val swaggerOauth2Server = "com.wordnik" %% "swagger-oauth2-server" % Versions.swagger
   val swaggerScalaServlet = "com.wordnik" %% "swagger-scala-servlet" % Versions.swagger
   val swaggerServlet = "com.wordnik" %% "swagger-servlet" % Versions.swagger
-  dependencyOverrides ++= Set(swaggerAnnotations, swaggerCore, swaggerJaxrs, swaggerJersey2Jaxrs,
+  depOverrides = depOverrides ++ Set(swaggerAnnotations, swaggerCore, swaggerJaxrs, swaggerJersey2Jaxrs,
     swaggerJerseyJaxrs, swaggerOauth2Server, swaggerScalaServlet, swaggerServlet)
 
   val yammerMetricsAnnotation = "com.yammer.metrics" % "metrics-annotation" % Versions.yammerMetrics
@@ -259,7 +260,7 @@ object Dependencies {
   val yammerMetricsServlet = "com.yammer.metrics" % "metrics-servlet" % Versions.yammerMetrics
   val yammerMetricsSpring = "com.yammer.metrics" % "metrics-spring" % Versions.yammerMetrics
   val yammerMetricsWeb = "com.yammer.metrics" % "metrics-web" % Versions.yammerMetrics
-  dependencyOverrides ++= Set(yammerMetricsAnnotation, yammerMetricsCore, yammerMetricsEhcache, yammerMetricsGuice,
+  depOverrides = depOverrides ++ Set(yammerMetricsAnnotation, yammerMetricsCore, yammerMetricsEhcache, yammerMetricsGuice,
     yammerMetricsJersey, yammerMetricsServlet, yammerMetricsSpring, yammerMetricsWeb)
 
   val commonsBeanutils = "commons-beanutils" % "commons-beanutils" % "1.9.1"
@@ -277,15 +278,15 @@ object Dependencies {
   val commonsLoggingApi = "commons-logging" % "commons-logging-api" % "1.1"
   val commonsPool = "commons-pool" % "commons-pool" % "1.6"
   val commonsNet = "commons-net" % "commons-net" % "3.3"
-  dependencyOverrides ++= Set(commonsBeanutils, commonsCli, commonsCodec, commonsCollections, commonsDaemon, commonsDbcp,
+  depOverrides = depOverrides ++ Set(commonsBeanutils, commonsCli, commonsCodec, commonsCollections, commonsDaemon, commonsDbcp,
     commonsDigester, commonsFileupload, commonsHttpclient, commonsIo, commonsLang, commonsLogging, commonsLoggingApi,
     commonsPool, commonsNet)
 
   val dom4j = "dom4j" % "dom4j" % "1.6.1"
-  dependencyOverrides += dom4j
+  depOverrides = depOverrides ++ Set(dom4j)
 
   val oldFreemarker = "freemarker" % "freemarker" % "2.3.15"
-  dependencyOverrides += oldFreemarker
+  depOverrides = depOverrides ++ Set(oldFreemarker)
 
   val cucumberAndroid = "info.cukes" % "cucumber-android" % Versions.cucumber % "test"
   val cucumberClojure = "info.cukes" % "cucumber-clojure" % Versions.cucumber % "test"
@@ -303,7 +304,7 @@ object Dependencies {
   val cucumberScala = "info.cukes" % "cucumber-scala" % Versions.cucumber % "test"
   val cucumberSpring = "info.cukes" % "cucumber-spring" % Versions.cucumber % "test"
   val cucumberWeld = "info.cukes" % "cucumber-weld" % Versions.cucumber % "test"
-  dependencyOverrides ++= Set(cucumberAndroid, cucumberClojure, cucumberCore, cucumberGroovy, cucumberGuice, cucumberIoke,
+  depOverrides = depOverrides ++ Set(cucumberAndroid, cucumberClojure, cucumberCore, cucumberGroovy, cucumberGuice, cucumberIoke,
     cucumberJava, cucumberJruby, cucumberJunit, cucumberJython, cucumberNeedle, cucumberOpenejb, cucumberPicocontainer,
     cucumberScala, cucumberSpring, cucumberWeld)
 
@@ -314,154 +315,154 @@ object Dependencies {
   val nettyExample = "io.netty" % "netty-example" % Versions.netty
   val nettyHandler = "io.netty" % "netty-handler" % Versions.netty
   val nettyTransport = "io.netty" % "netty-transport" % Versions.netty
-  dependencyOverrides ++= Set(nettyAll, nettyBuffer, nettyCodec, nettyCommon, nettyExample, nettyHandler, nettyTransport)
+  depOverrides = depOverrides ++ Set(nettyAll, nettyBuffer, nettyCodec, nettyCommon, nettyExample, nettyHandler, nettyTransport)
 
   val javassist = "javassist" % "javassist" % "3.12.1.GA"
-  dependencyOverrides += javassist
+  depOverrides = depOverrides ++ Set(javassist)
 
   val activation = "javax.activation" % "activation" % "1.1.1"
-  dependencyOverrides += activation
+  depOverrides = depOverrides ++ Set(activation)
 
   val jsr250Api = "javax.annotation" % "jsr250-api" % "1.0"
-  dependencyOverrides += jsr250Api
+  depOverrides = depOverrides ++ Set(jsr250Api)
 
   val javaxAnnotationApi = "javax.annotation" % "javax.annotation-api" % "1.2"
-  dependencyOverrides += javaxAnnotationApi
+  depOverrides = depOverrides ++ Set(javaxAnnotationApi)
 
   val javaxCacheApi = "javax.cache" % "cache-api" % "1.0.0-RC1"
-  dependencyOverrides += javaxCacheApi
+  depOverrides = depOverrides ++ Set(javaxCacheApi)
 
   val elApi = "javax.el" % "el-api" % "2.2"
-  dependencyOverrides += elApi
+  depOverrides = depOverrides ++ Set(elApi)
 
   val javaxElApi = "javax.el" % "javax.el-api" % "3.0.0"
-  dependencyOverrides += javaxElApi
+  depOverrides = depOverrides ++ Set(javaxElApi)
 
   val javaxInject = "javax.inject" % "javax.inject" % "1"
-  dependencyOverrides += javaxInject
+  depOverrides = depOverrides ++ Set(javaxInject)
 
   val j2ee = "javax.j2ee" % "j2ee" % "1.5"
-  dependencyOverrides += j2ee
+  depOverrides = depOverrides ++ Set(j2ee)
 
   val jms = "javax.jms" % "jms" % "1.1"
-  dependencyOverrides += jms
+  depOverrides = depOverrides ++ Set(jms)
 
   val mail = "javax.mail" % "mail" % "1.4.7"
-  dependencyOverrides += mail
+  depOverrides = depOverrides ++ Set(mail)
 
   val javaxMailApi = "javax.mail" % "javax.mail-api" % "1.5.1"
-  dependencyOverrides += javaxMailApi
+  depOverrides = depOverrides ++ Set(javaxMailApi)
 
   val persistenceApi = "javax.persistence" % "persistence-api" % "1.0.2"
-  dependencyOverrides += persistenceApi
+  depOverrides = depOverrides ++ Set(persistenceApi)
 
   val jsr94 = "javax.rules" % "jsr94" % "1.1"
-  dependencyOverrides += jsr94
+  depOverrides = depOverrides ++ Set(jsr94)
 
   val servletApi = "javax.servlet" % "servlet-api" % "2.5"
-  dependencyOverrides += servletApi
+  depOverrides = depOverrides ++ Set(servletApi)
 
   val javaxServletApi = "javax.servlet" % "javax.servlet-api" % "3.1.0"
-  dependencyOverrides += javaxServletApi
+  depOverrides = depOverrides ++ Set(javaxServletApi)
 
   val jstl = "javax.servlet" % "jstl" % "1.2"
-  dependencyOverrides += jstl
+  depOverrides = depOverrides ++ Set(jstl)
 
   val jspApi = "javax.servlet.jsp" % "jsp-api" % "2.2.1"
-  dependencyOverrides += jspApi
+  depOverrides = depOverrides ++ Set(jspApi)
 
   val jstlApi = "javax.servlet.jsp.jstl" % "jstl-api" % "1.2"
-  dependencyOverrides += jstlApi
+  depOverrides = depOverrides ++ Set(jstlApi)
 
   val jta = "javax.transaction" % "jta" % "1.1"
-  dependencyOverrides += jta
+  depOverrides = depOverrides ++ Set(jta)
 
   val validationApi = "javax.validation" % "validation-api" % "1.1.0.Final"
-  dependencyOverrides += validationApi
+  depOverrides = depOverrides ++ Set(validationApi)
 
   val jsr311Api = "javax.ws.rs" % "jsr311-api" % "1.1.1"
-  dependencyOverrides += jsr311Api
+  depOverrides = depOverrides ++ Set(jsr311Api)
 
   val javaxWsRsApi = "javax.ws.rs" % "javax.ws.rs-api" % "2.0-m10"
-  dependencyOverrides += javaxWsRsApi
+  depOverrides = depOverrides ++ Set(javaxWsRsApi)
 
   val jsr173 = "javax.xml" % "jsr173" % "1.0"
-  dependencyOverrides += jsr173
+  depOverrides = depOverrides ++ Set(jsr173)
 
   val jaxbApi = "javax.xml.bind" % "jaxb-api" % "2.2.11"
-  dependencyOverrides += jaxbApi
+  depOverrides = depOverrides ++ Set(jaxbApi)
 
   val staxApi = "javax.xml.stream" % "stax-api" % "1.0-2"
-  dependencyOverrides += staxApi
+  depOverrides = depOverrides ++ Set(staxApi)
 
   val jaxen = "jaxen" % "jaxen" % "1.1.4"
-  dependencyOverrides += jaxen
+  depOverrides = depOverrides ++ Set(jaxen)
 
   val jdepend = "jdepend" % "jdepend" % "2.9.1"
-  dependencyOverrides += jdepend
+  depOverrides = depOverrides ++ Set(jdepend)
 
   val jline = "jline" % "jline" % "2.11"
-  dependencyOverrides += jline
+  depOverrides = depOverrides ++ Set(jline)
 
   val jodaTime = "joda-time" % "joda-time" % "2.3"
-  dependencyOverrides += jodaTime
+  depOverrides = depOverrides ++ Set(jodaTime)
 
   val junit = "junit" % "junit" % "4.11" % "test"
-  dependencyOverrides += junit
+  depOverrides = depOverrides ++ Set(junit)
 
   val jxl = "jxl" % "jxl" % "2.6.10"
-  dependencyOverrides += jxl
+  depOverrides = depOverrides ++ Set(jxl)
 
   val log4j = "log4j" % "log4j" % "1.2.17"
   val log4jExtras = "log4j" % "apache-log4j-extras" % "1.2.17"
-  dependencyOverrides ++= Set(log4j, log4jExtras)
+  depOverrides = depOverrides ++ Set(log4j, log4jExtras)
 
   val mysqlConnectorJava = "mysql" % "mysql-connector-java" % "5.1.29"
-  dependencyOverrides += mysqlConnectorJava
+  depOverrides = depOverrides ++ Set(mysqlConnectorJava)
 
   val jerichoHtml = "net.htmlparser.jericho" % "jericho-html" % "3.3"
-  dependencyOverrides += jerichoHtml
+  depOverrides = depOverrides ++ Set(jerichoHtml)
 
   val ehcache = "net.sf.ehcache" % "ehcache" % "2.8.1"
-  dependencyOverrides += ehcache
+  depOverrides = depOverrides ++ Set(ehcache)
 
   val flexjson = "net.sf.flexjson" % "flexjson" % "3.2"
-  dependencyOverrides += flexjson
+  depOverrides = depOverrides ++ Set(flexjson)
 
   val cobertura = "net.sourceforge.cobertura" % "cobertura" % "2.0.3"
-  dependencyOverrides += cobertura
+  depOverrides = depOverrides ++ Set(cobertura)
 
   val saxon = "net.sourceforge.saxon" % "saxon" % "9.1.0.8"
-  dependencyOverrides += saxon
+  depOverrides = depOverrides ++ Set(saxon)
 
   val ognl = "ognl" % "ognl" % "3.0.8"
-  dependencyOverrides += ognl
+  depOverrides = depOverrides ++ Set(ognl)
 
   val opencsv = "opencsv" % "opencsv" % "1.8"
-  dependencyOverrides += opencsv
+  depOverrides = depOverrides ++ Set(opencsv)
 
   val antlr = "org.antlr" % "antlr" % "3.5.1"
   val antlrStringtemplate = "org.antlr" % "stringtemplate" % "4.0.2"
-  dependencyOverrides ++= Set(antlr, antlrStringtemplate)
+  depOverrides = depOverrides ++ Set(antlr, antlrStringtemplate)
 
   val jakartaOro = "org.apache" % "jakarta-oro" % "2.0.8"
-  dependencyOverrides += jakartaOro
+  depOverrides = depOverrides ++ Set(jakartaOro)
 
   val activemqAll = "org.apache.activemq" % "activemq-all" % Versions.activemq
   val activemqCamel = "org.apache.activemq" % "activemq-camel" % Versions.activemq
   val activemqPool = "org.apache.activemq" % "activemq-pool" % Versions.activemq
-  dependencyOverrides ++= Set(activemqAll, activemqCamel, activemqPool)
+  depOverrides = depOverrides ++ Set(activemqAll, activemqCamel, activemqPool)
 
   val ant = "org.apache.ant" % "ant" % Versions.ant
   val antLauncher = "org.apache.ant" % "ant-launcher" % Versions.ant
-  dependencyOverrides ++= Set(ant, antLauncher)
+  depOverrides = depOverrides ++ Set(ant, antLauncher)
 
   val avro = "org.apache.avro" % "avro" % Versions.avro
   val avroIpc = "org.apache.avro" % "avro-ipc" % Versions.avro
-  dependencyOverrides ++= Set(avro, avroIpc)
+  depOverrides = depOverrides ++ Set(avro, avroIpc)
 
   val bsfAll = "org.apache.bsf" % "bsf-all" % "3.0-beta3"
-  dependencyOverrides += bsfAll
+  depOverrides = depOverrides ++ Set(bsfAll)
 
   val camelAws = "org.apache.camel" % "camel-aws" % Versions.camel
   val camelBeanValidator = "org.apache.camel" % "camel-bean-validator" % Versions.camel
@@ -500,17 +501,17 @@ object Dependencies {
   val camelXmpp = "org.apache.camel" % "camel-xmpp" % Versions.camel
   val camelXstream = "org.apache.camel" % "camel-xstream" % Versions.camel
   val camelZookeeper = "org.apache.camel" % "camel-zookeeper" % Versions.camel
-  dependencyOverrides ++= Set(camelAws, camelBeanValidator, camelBindy, camelCache, camelCore, camelCoreXml, camelCsv,
+  depOverrides = depOverrides ++ Set(camelAws, camelBeanValidator, camelBindy, camelCache, camelCore, camelCoreXml, camelCsv,
     camelCxf, camelCxfTransport, camelDozer, camelEclipse, camelFtp, camelHttp4, camelJackson, camelJaxb, camelJdbc,
     camelJms, camelJpa, camelLucene, camelMail, camelMongodb, camelQuartz, camelRabbitmq, camelScala, camelScript,
     camelSmpp, camelSolr, camelSpring, camelTest, camelTestng, camelVelocity, camelWeb, camelWebsocket, camelXmljson,
     camelXmpp, camelXstream, camelZookeeper)
 
   val commonsLang3 = "org.apache.commons" % "commons-lang3" % "3.3"
-  dependencyOverrides += commonsLang3
+  depOverrides = depOverrides ++ Set(commonsLang3)
 
   val commonsMath3 = "org.apache.commons" % "commons-math3" % "3.2"
-  dependencyOverrides += commonsMath3
+  depOverrides = depOverrides ++ Set(commonsMath3)
 
   val cxfApi = "org.apache.cxf" % "cxf-api" % Versions.cxf
   val cxfBundle = "org.apache.cxf" % "cxf-bundle" % Versions.cxf
@@ -530,64 +531,64 @@ object Dependencies {
   val cxfRtWsAddr = "org.apache.cxf" % "cxf-rt-ws-addr" % Versions.cxf
   val cxfTestutils = "org.apache.cxf" % "cxf-testutils" % Versions.cxf % "test"
   val cxfSystestsJaxrs = "org.apache.cxf.systests" % "cxf-systests-jaxrs" % Versions.cxf % "test"
-  dependencyOverrides ++= Set(cxfApi, cxfBundle, cxfRtBindingsSoap, cxfRtBindingsXml, cxfRtCore, cxfRtDatabindingJaxb,
+  depOverrides = depOverrides ++ Set(cxfApi, cxfBundle, cxfRtBindingsSoap, cxfRtBindingsXml, cxfRtCore, cxfRtDatabindingJaxb,
     cxfRtFrontendJaxrs, cxfRtFrontendJaxws, cxfRtFrontendSimple, cxfRtRsExtensionProviders, cxfRtRsExtensionSearch,
     cxfRtRsSecurityCors, cxfRtRsSecurityOauth2, cxfRtTransportsHttp, cxfRtTransportsHttpJetty, cxfRtWsAddr,
     cxfTestutils, cxfSystestsJaxrs)
 
   val geronimoAnnotation10Spec = "org.apache.geronimo.specs" % "geronimo-annotation_1.0_spec" % "1.1.1"
-  dependencyOverrides += geronimoAnnotation10Spec
+  depOverrides = depOverrides ++ Set(geronimoAnnotation10Spec)
 
   val geronimoJ2ee11Spec = "org.apache.geronimo.specs" % "geronimo-j2ee-management_1.1_spec" % "1.0.1"
-  dependencyOverrides += geronimoJ2ee11Spec
+  depOverrides = depOverrides ++ Set(geronimoJ2ee11Spec)
 
   val geronimoJaspic10Spec = "org.apache.geronimo.specs" % "geronimo-jaspic_1.0_spec" % "1.1"
-  dependencyOverrides += geronimoJaspic10Spec
+  depOverrides = depOverrides ++ Set(geronimoJaspic10Spec)
 
   val geronimoJms11Spec = "org.apache.geronimo.specs" % "geronimo-jms_1.1_spec" % "1.1.1"
-  dependencyOverrides += geronimoJms11Spec
+  depOverrides = depOverrides ++ Set(geronimoJms11Spec)
 
   val geronimoJta101BSpec = "org.apache.geronimo.specs" % "geronimo-jta_1.0.1B_spec" % "1.1.1"
-  dependencyOverrides += geronimoJta101BSpec
+  depOverrides = depOverrides ++ Set(geronimoJta101BSpec)
 
   val geronimoJta11Spec = "org.apache.geronimo.specs" % "geronimo-jta_1.1_spec" % "1.1.1"
-  dependencyOverrides += geronimoJta11Spec
+  depOverrides = depOverrides ++ Set(geronimoJta11Spec)
 
   val geronimoServlet25Spec = "org.apache.geronimo.specs" % "geronimo-servlet_2.5_spec" % "1.2"
-  dependencyOverrides += geronimoServlet25Spec
+  depOverrides = depOverrides ++ Set(geronimoServlet25Spec)
 
   val geronimoServlet30Spec = "org.apache.geronimo.specs" % "geronimo-servlet_3.0_spec" % "1.0"
-  dependencyOverrides += geronimoServlet30Spec
+  depOverrides = depOverrides ++ Set(geronimoServlet30Spec)
 
   val geronimoStaxApi10Spec = "org.apache.geronimo.specs" % "geronimo-stax-api_1.0_spec" % "1.0.1"
-  dependencyOverrides += geronimoStaxApi10Spec
+  depOverrides = depOverrides ++ Set(geronimoStaxApi10Spec)
 
   val httpclient = "org.apache.httpcomponents" % "httpclient" % Versions.httpComponents
   val httpclientCache = "org.apache.httpcomponents" % "httpclient-cache" % Versions.httpComponents
   val httpcore = "org.apache.httpcomponents" % "httpcore" % "4.3.2"
   val httpmime = "org.apache.httpcomponents" % "httpmime" % Versions.httpComponents
-  dependencyOverrides ++= Set(httpclient, httpclientCache, httpcore, httpmime)
+  depOverrides = depOverrides ++ Set(httpclient, httpclientCache, httpcore, httpmime)
 
   val log4j2 = "org.apache.logging.log4j" % "log4j" % "2.0-rc1"
-  dependencyOverrides += log4j2
+  depOverrides = depOverrides ++ Set(log4j2)
 
   val lucenceAnalyzersCommon = "org.apache.lucene" % "lucene-analyzers-common" % Versions.lucene
   val lucenceCore = "org.apache.lucene" % "lucene-core" % Versions.lucene
-  dependencyOverrides ++= Set(lucenceAnalyzersCommon, lucenceCore)
+  depOverrides = depOverrides ++ Set(lucenceAnalyzersCommon, lucenceCore)
 
   val tomcat = "org.apache.tomcat" % "tomcat" % Versions.tomcat
-  dependencyOverrides += tomcat
+  depOverrides = depOverrides ++ Set(tomcat)
 
   val xbeanSpring = "org.apache.xbean" % "xbean-spring" % "3.16"
-  dependencyOverrides += xbeanSpring
+  depOverrides = depOverrides ++ Set(xbeanSpring)
 
   val xmlbeans = "org.apache.xmlbeans" % "xmlbeans" % "2.5.0"
-  dependencyOverrides += xmlbeans
+  depOverrides = depOverrides ++ Set(xmlbeans)
 
   val aspectjrt = "org.aspectj" % "aspectjrt" % Versions.aspectj
   val aspectjtools = "org.aspectj" % "aspectjtools" % Versions.aspectj
   val aspectjweaver = "org.aspectj" % "aspectjweaver" % Versions.aspectj
-  dependencyOverrides ++= Set(aspectjrt, aspectjtools, aspectjweaver)
+  depOverrides = depOverrides ++ Set(aspectjrt, aspectjtools, aspectjweaver)
 
   val bcmailJdk14 = "org.bouncycastle" % "bcmail-jdk14" % Versions.bouncycastle
   val bcmailJdk15on = "org.bouncycastle" % "bcmail-jdk15on" % Versions.bouncycastle
@@ -599,64 +600,64 @@ object Dependencies {
   val bcprovJdk15on = "org.bouncycastle" % "bcprov-jdk15on" % Versions.bouncycastle
   val bcprovExtJdk14 = "org.bouncycastle" % "bcprov-ext-jdk14" % Versions.bouncycastle
   val bcprovExtJdk15on = "org.bouncycastle" % "bcprov-ext-jdk15on" % Versions.bouncycastle
-  dependencyOverrides ++= Set(bcmailJdk14, bcmailJdk15on, bcpgJdk14, bcpgJdk15on, bcpkixJdk14, bcpkixJdk145on,
+  depOverrides = depOverrides ++ Set(bcmailJdk14, bcmailJdk15on, bcpgJdk14, bcpgJdk15on, bcpkixJdk14, bcpkixJdk145on,
     bcprovJdk14, bcprovJdk15on, bcprovExtJdk14, bcprovExtJdk15on)
 
   val enunciateCoreAnnotations = "org.codehaus.enunciate" % "enunciate-core-annotations" % "1.28"
-  dependencyOverrides += enunciateCoreAnnotations
+  depOverrides = depOverrides ++ Set(enunciateCoreAnnotations)
 
   val groovy = "org.codehaus.groovy" % "groovy" % "2.2.2"
   val groovyAll = "org.codehaus.groovy" % "groovy-all" % "2.2.2"
-  dependencyOverrides ++= Set(groovy, groovyAll)
+  depOverrides = depOverrides ++ Set(groovy, groovyAll)
 
   val jackson1CoreAsl = "org.codehaus.jackson" % "jackson-core-asl" % Versions.jackson1
   val jackson1Jaxrs = "org.codehaus.jackson" % "jackson-jaxrs" % Versions.jackson1
   val jackson1MapperAsl = "org.codehaus.jackson" % "jackson-mapper-asl" % Versions.jackson1
   val jackson1Xc = "org.codehaus.jackson" % "jackson-xc" % Versions.jackson1
-  dependencyOverrides ++= Set(jackson1CoreAsl, jackson1Jaxrs, jackson1MapperAsl, jackson1Xc)
+  depOverrides = depOverrides ++ Set(jackson1CoreAsl, jackson1Jaxrs, jackson1MapperAsl, jackson1Xc)
 
   val jettison = "org.codehaus.jettison" % "jettison" % "1.3.5"
-  dependencyOverrides += jettison
+  depOverrides = depOverrides ++ Set(jettison)
 
   val easymock = "org.easymock" % "easymock" % "3.2" % "test"
-  dependencyOverrides += easymock
+  depOverrides = depOverrides ++ Set(easymock)
 
   val jettyAnt = "org.eclipse.jetty" % "jetty-ant" % Versions.jetty
   val jettyDistribution = "org.eclipse.jetty" % "jetty-distribution" % Versions.jetty
   val jettyServer = "org.eclipse.jetty" % "jetty-server" % Versions.jetty
-  dependencyOverrides ++= Set(jettyAnt, jettyDistribution, jettyServer)
+  depOverrides = depOverrides ++ Set(jettyAnt, jettyDistribution, jettyServer)
 
   val eclipseLink = "org.eclipse.persistence" % "eclipselink" % "2.5.1"
-  dependencyOverrides += eclipseLink
+  depOverrides = depOverrides ++ Set(eclipseLink)
 
   val javaxPersistence = "org.eclipse.persistence" % "javax.persistence" % "2.1.0"
-  dependencyOverrides += javaxPersistence
+  depOverrides = depOverrides ++ Set(javaxPersistence)
 
   val freemarker = "org.freemarker" % "freemarker" % Versions.freemarker
   val freemarkerGae = "org.freemarker" % "freemarker-gae" % Versions.freemarker
-  dependencyOverrides ++= Set(freemarker, freemarkerGae)
+  depOverrides = depOverrides ++ Set(freemarker, freemarkerGae)
 
   val jerseyJettyConnector = "org.glassfish.jersey.connector" % "jersey-jetty-connector" % Versions.jersey
-  dependencyOverrides += jerseyJettyConnector
+  depOverrides = depOverrides ++ Set(jerseyJettyConnector)
 
   val jerseyClient = "org.glassfish.jersey.core" % "jersey-client" % Versions.jersey
   val jerseyCommon = "org.glassfish.jersey.core" % "jersey-common" % Versions.jersey
   val jerseyServer = "org.glassfish.jersey.core" % "jersey-server" % Versions.jersey
-  dependencyOverrides ++= Set(jerseyClient, jerseyCommon, jerseyServer)
+  depOverrides = depOverrides ++ Set(jerseyClient, jerseyCommon, jerseyServer)
 
   val jerseyBeanValidation = "org.glassfish.jersey.ext" % "jersey-bean-validation" % Versions.jersey
   val jerseyDeclarativeLinking = "org.glassfish.jersey.media" % "jersey-declarative-linking" % Versions.jersey
   val jerseySpring3 = "org.glassfish.jersey.media" % "jersey-spring3" % Versions.jersey
-  dependencyOverrides ++= Set(jerseyBeanValidation, jerseyDeclarativeLinking, jerseySpring3)
+  depOverrides = depOverrides ++ Set(jerseyBeanValidation, jerseyDeclarativeLinking, jerseySpring3)
 
   val jerseyMediaJson = "org.glassfish.jersey.media" % "jersey-media-json" % Versions.jersey
   val jerseyMediaJsonJackson = "org.glassfish.jersey.media" % "jersey-media-json-jackson" % Versions.jersey
   val jerseyMediaJsonJettison = "org.glassfish.jersey.media" % "jersey-media-json-jettison" % Versions.jersey
   val jerseyMediaMultipart = "org.glassfish.jersey.media" % "jersey-media-multipart" % Versions.jersey
-  dependencyOverrides ++= Set(jerseyMediaJson, jerseyMediaJsonJackson, jerseyMediaJsonJettison, jerseyMediaMultipart)
+  depOverrides = depOverrides ++ Set(jerseyMediaJson, jerseyMediaJsonJackson, jerseyMediaJsonJettison, jerseyMediaMultipart)
 
   val jerseyOauth2Client = "org.glassfish.jersey.security" % "oauth2-client" % Versions.jersey
-  dependencyOverrides += jerseyOauth2Client
+  depOverrides = depOverrides ++ Set(jerseyOauth2Client)
 
   val hibernateC3p0 = "org.hibernate" % "hibernate-c3p0" % Versions.hibernate
   val hibernateCore = "org.hibernate" % "hibernate-core" % Versions.hibernate
@@ -664,51 +665,51 @@ object Dependencies {
   val hibernateEntitymanager = "org.hibernate" % "hibernate-entitymanager" % Versions.hibernate
   val hibernateSearch = "org.hibernate" % "hibernate-search" % "4.5.0.Final"
   val hibernateValidator = "org.hibernate" % "hibernate-validator" % "5.1.0.Final"
-  dependencyOverrides ++= Set(hibernateC3p0, hibernateCore, hibernateEhcache, hibernateEntitymanager, hibernateSearch,
+  depOverrides = depOverrides ++ Set(hibernateC3p0, hibernateCore, hibernateEhcache, hibernateEntitymanager, hibernateSearch,
     hibernateValidator)
 
   val hsqldb = "org.hsqldb" % "hsqldb" % "2.3.2"
-  dependencyOverrides += hsqldb
+  depOverrides = depOverrides ++ Set(hsqldb)
 
   val jdom = "org.jdom" % "jdom" % "2.0.2"
-  dependencyOverrides += jdom
+  depOverrides = depOverrides ++ Set(jdom)
 
   val jencks = "org.jencks" % "jencks" % Versions.jencks
   val jencksAmqpool = "org.jencks" % "jencks-amqpool" % Versions.jencks
-  dependencyOverrides ++= Set(jencks, jencksAmqpool)
+  depOverrides = depOverrides ++ Set(jencks, jencksAmqpool)
 
   val json4sJackson = "org.json4s" %% "json4s-jackson" % Versions.json4s
   val json4sNative = "org.json4s" %% "json4s-native" % Versions.json4s
-  dependencyOverrides ++= Set(json4sJackson, json4sNative)
+  depOverrides = depOverrides ++ Set(json4sJackson, json4sNative)
 
   val annox = "org.jvnet.annox" % "annox" % "0.5.1"
-  dependencyOverrides += annox
+  depOverrides = depOverrides ++ Set(annox)
 
   val jetty6 = "org.mortbay.jetty" % "jetty" % Versions.jetty6
   val jettyManagement6 = "org.mortbay.jetty" % "jetty-management" % Versions.jetty6
   val jettyUtil6 = "org.mortbay.jetty" % "jetty-util" % Versions.jetty6
-  dependencyOverrides ++= Set(jetty6, jettyManagement6, jettyUtil6)
+  depOverrides = depOverrides ++ Set(jetty6, jettyManagement6, jettyUtil6)
 
   val mybatis = "org.mybatis" % "mybatis" %"3.2.5"
   val mybatisEhcache = "org.mybatis" % "mybatis-ehcache" %"1.0.0"
   val mybatisGuice = "org.mybatis" % "mybatis-guice" %"3.5"
   val mybatisSpring = "org.mybatis" % "mybatis-spring" %"1.2.2"
-  dependencyOverrides ++= Set(mybatis, mybatisEhcache, mybatisGuice, mybatisSpring)
+  depOverrides = depOverrides ++ Set(mybatis, mybatisEhcache, mybatisGuice, mybatisSpring)
 
   val mockitoAll = "org.mockito" % "mockito-all" % "1.9.5" % "test"
-  dependencyOverrides += mockitoAll
+  depOverrides = depOverrides ++ Set(mockitoAll)
 
   val mongoJavaDriver = "org.mongodb" % "mongo-java-driver" % "2.11.4"
-  dependencyOverrides += mongoJavaDriver
+  depOverrides = depOverrides ++ Set(mongoJavaDriver)
 
   val mvel2 = "org.mvel" % "mvel2" % "2.1.9.Final"
-  dependencyOverrides += mvel2
+  depOverrides = depOverrides ++ Set(mvel2)
 
   val objenesis = "org.objenesis" % "objenesis" % "2.1"
-  dependencyOverrides += objenesis
+  depOverrides = depOverrides ++ Set(objenesis)
 
   val ostermillerUtils = "org.ostermiller" % "utils" % "1.07.00"
-  dependencyOverrides += ostermillerUtils
+  depOverrides = depOverrides ++ Set(ostermillerUtils)
 
   val asm = "org.ow2.asm" % "asm" % Versions.asm
   val asmAll = "org.ow2.asm" % "asm-all" % Versions.asm
@@ -718,7 +719,7 @@ object Dependencies {
   val asmTree = "org.ow2.asm" % "asm-tree" % Versions.asm
   val asmUtil = "org.ow2.asm" % "asm-util" % Versions.asm
   val asmXml = "org.ow2.asm" % "asm-xml" % Versions.asm
-  dependencyOverrides ++= Set(asm, asmAll, asmAnalysis, asmCommons, asmDebugAll, asmTree, asmUtil, asmXml)
+  depOverrides = depOverrides ++ Set(asm, asmAll, asmAnalysis, asmCommons, asmDebugAll, asmTree, asmUtil, asmXml)
 
   val powermockApi = "org.powermock" % "powermock-api" % Versions.powermock % "test"
   val powermockCore = "org.powermock" % "powermock-core" % Versions.powermock % "test"
@@ -728,11 +729,11 @@ object Dependencies {
   val powermockModuleJunit4Common = "org.powermock" % "powermock-module-junit4-common" % Versions.powermock % "test"
   val powermockModuleTestng = "org.powermock" % "powermock-module-testng" % Versions.powermock % "test"
   val powermockModuleTestngCommon = "org.powermock" % "powermock-module-testng-common" % Versions.powermock % "test"
-  dependencyOverrides ++= Set(powermockApi, powermockCore, powermockEasymockReleaseFull, powermockMockitoReleaseFull,
+  depOverrides = depOverrides ++ Set(powermockApi, powermockCore, powermockEasymockReleaseFull, powermockMockitoReleaseFull,
     powermockModuleJunit4, powermockModuleJunit4Common, powermockModuleTestng, powermockModuleTestngCommon)
 
   val quartz = "org.quartz-scheduler" % "quartz" % "2.2.1"
-  dependencyOverrides += quartz
+  depOverrides = depOverrides ++ Set(quartz)
 
   val scalaActors = "org.scala-lang" % "scala-actors" % Versions.scala
   val scalaCompiler = "org.scala-lang" % "scala-compiler" % Versions.scala
@@ -741,20 +742,20 @@ object Dependencies {
   val scalaLibraryAll = "org.scala-lang" % "scala-library-all" % Versions.scala
   val scalaReflect = "org.scala-lang" % "scala-reflect" % Versions.scala
   val scalap = "org.scala-lang" % "scalap" % Versions.scala
-  dependencyOverrides ++= Set(scalaActors, scalaCompiler, scalaDist, scalaLibrary, scalaLibraryAll, scalaReflect, scalap)
+  depOverrides = depOverrides ++ Set(scalaActors, scalaCompiler, scalaDist, scalaLibrary, scalaLibraryAll, scalaReflect, scalap)
 
   val scalaAsync = "org.scala-lang.modules" %% "scala-async" % "0.9.1"
   val scalaPartest = "org.scala-lang.modules" %% "scala-partest" % "1.0.10"
   val scalaPartestInterface = "org.scala-lang.modules" %% "scala-partest-interface" % "0.4.0"
   val scalaSwing = "org.scala-lang.modules" %% "scala-swing" % "1.0.1"
   val scalaXml = "org.scala-lang.modules" %% "scala-xml" % "1.0.1"
-  dependencyOverrides ++= Set(scalaAsync, scalaPartest, scalaPartestInterface, scalaSwing, scalaXml)
+  depOverrides = depOverrides ++ Set(scalaAsync, scalaPartest, scalaPartestInterface, scalaSwing, scalaXml)
   
   val scalastyle = "org.scalastyle" %% "scalastyle" % Versions.scalastyle
-  dependencyOverrides += scalastyle
+  depOverrides = depOverrides ++ Set(scalastyle)
 
   val jclOverSlf4j = "org.slf4j" % "jcl-over-slf4j" % Versions.slf4j
-  dependencyOverrides += jclOverSlf4j
+  depOverrides = depOverrides ++ Set(jclOverSlf4j)
 
   val slf4jAndroid = "org.slf4j" % "slf4j-android" % Versions.slf4j
   val slf4jApi = "org.slf4j" % "slf4j-api" % Versions.slf4j
@@ -762,7 +763,7 @@ object Dependencies {
   val slf4jJcl = "org.slf4j" % "slf4j-jcl" % Versions.slf4j
   val slf4jLog4j12 = "org.slf4j" % "slf4j-log4j12" % Versions.slf4j
   val slf4jSimple = "org.slf4j" % "slf4j-simple" % Versions.slf4j
-  dependencyOverrides ++= Set(slf4jAndroid, slf4jApi, slf4jExt, slf4jJcl, slf4jLog4j12, slf4jSimple)
+  depOverrides = depOverrides ++ Set(slf4jAndroid, slf4jApi, slf4jExt, slf4jJcl, slf4jLog4j12, slf4jSimple)
 
   val springAop = "org.springframework" % "spring-aop" % Versions.spring
   val springAsm = "org.springframework" % "spring-asm" % Versions.spring
@@ -781,7 +782,7 @@ object Dependencies {
   val springTx = "org.springframework" % "spring-tx" % Versions.spring
   val springWeb = "org.springframework" % "spring-web" % Versions.spring
   val springWebmvc = "org.springframework" % "spring-webmvc" % Versions.spring
-  dependencyOverrides ++= Set(springAop, springAsm, springAspects, springBeans, springContext, springContextSupport,
+  depOverrides = depOverrides ++ Set(springAop, springAsm, springAspects, springBeans, springContext, springContextSupport,
     springCore, springExpression, springInstrument, springJdbc, springJms, springOrm, springOxm, springTest, springTx,
     springWeb, springWebmvc)
 
@@ -796,7 +797,7 @@ object Dependencies {
   val springIntegrationStream = "org.springframework.integration" % "spring-integration-stream" % Versions.springIntegration
   val springIntegrationWs = "org.springframework.integration" % "spring-integration-ws" % Versions.springIntegration
   val springIntegrationXml = "org.springframework.integration" % "spring-integration-xml" % Versions.springIntegration
-  dependencyOverrides ++= Set(springIntegrationCore, springIntegrationEvent, springIntegrationFile, springIntegrationHttp,
+  depOverrides = depOverrides ++ Set(springIntegrationCore, springIntegrationEvent, springIntegrationFile, springIntegrationHttp,
     springIntegrationJms, springIntegrationMail, springIntegrationRmi, springIntegrationSecurity, springIntegrationStream,
     springIntegrationWs, springIntegrationXml)
 
@@ -808,42 +809,42 @@ object Dependencies {
   val springSecurityLdap = "org.springframework.security" % "spring-security-ldap" % Versions.springSecurity
   val springSecurityOpenId = "org.springframework.security" % "spring-security-openid" % Versions.springSecurity
   val springSecurityWeb = "org.springframework.security" % "spring-security-web" % Versions.springSecurity
-  dependencyOverrides ++= Set(springSecurityAcl, springSecurityCas, springSecurityConfig, springSecurityCore,
+  depOverrides = depOverrides ++ Set(springSecurityAcl, springSecurityCas, springSecurityConfig, springSecurityCore,
     springSecurityCrypto, springSecurityLdap, springSecurityOpenId, springSecurityWeb)
 
   val springSecurityOauth2 = "org.springframework.security.oauth" % "spring-security-oauth2" % Versions.springSecurityOauth
-  dependencyOverrides += springSecurityOauth2
+  depOverrides = depOverrides ++ Set(springSecurityOauth2)
 
   val testng = "org.testng" % "testng" % "6.8.8" % "test"
-  dependencyOverrides += testng
+  depOverrides = depOverrides ++ Set(testng)
 
   val snakeYaml = "org.yaml" % "snakeyaml" % "1.13"
-  dependencyOverrides += snakeYaml
+  depOverrides = depOverrides ++ Set(snakeYaml)
 
   val oldStaxApi = "stax" % "stax-api" % "1.0.1"
-  dependencyOverrides += oldStaxApi
+  depOverrides = depOverrides ++ Set(oldStaxApi)
 
   val taglibsStandard = "taglibs" % "standard" % "1.1.2"
-  dependencyOverrides += taglibsStandard
+  depOverrides = depOverrides ++ Set(taglibsStandard)
 
   val xalan = "xalan" % "xalan" % "2.7.1"
-  dependencyOverrides += xalan
+  depOverrides = depOverrides ++ Set(xalan)
 
   val xerces = "xerces" % "xerces" % "2.4.0"
   val xercesImpl = "xerces" % "xercesImpl" % "2.11.0"
-  dependencyOverrides ++= Set(xerces, xercesImpl)
+  depOverrides = depOverrides ++ Set(xerces, xercesImpl)
 
   val xmlApis = "xml-apis" % "xml-apis" % "1.4.01"
-  dependencyOverrides += xmlApis
+  depOverrides = depOverrides ++ Set(xmlApis)
 
   val xmlunit = "xmlunit" % "xmlunit" % "1.5" % "test"
-  dependencyOverrides += xmlunit
+  depOverrides = depOverrides ++ Set(xmlunit)
 
   val xom = "xom" % "xom" % "1.2.5"
-  dependencyOverrides += xom
+  depOverrides = depOverrides ++ Set(xom)
 
   val xpp3min = "xpp3_min" % "xpp3_min" % "1.1.4c"
-  dependencyOverrides += xpp3min
+  depOverrides = depOverrides ++ Set(xpp3min)
 }
 
 object Settings {
@@ -852,7 +853,7 @@ object Settings {
   import Dependencies._
 
 
-  val coreDefaultSettings = Defaults.coreDefaultSettings ++ Seq(
+  val coreDefaultSettings : Seq[Setting[_]] = Defaults.coreDefaultSettings ++ Seq(
     organizationName := "Baleio Inc.",
     organizationHomepage := Some(url("http://www.bale.io")),
     scalaVersion := Versions.scala,
@@ -860,7 +861,7 @@ object Settings {
     conflictManager := ConflictManager.strict,
     exportJars := true,
     autoScalaLibrary := false,
-    dependencyOverrides := dependencyOverrides.value,
+    dependencyOverrides := depOverrides,
     scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature"),
     scalacOptions in(Compile, doc) ++= Seq("-external-urls:scala=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", Versions.java, "-target", Versions.java, "-Xlint:all"),
@@ -873,5 +874,5 @@ object Settings {
         else
           Some(releases)
     },
-    credentials += Credentials(Path.userHome / ".sbt" / ".auth-baleio"))
+    credentials += Credentials(Path.userHome / ".ivy2" / ".auth-baleio"))
 }
