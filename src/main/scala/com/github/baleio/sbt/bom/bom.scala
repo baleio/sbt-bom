@@ -45,8 +45,9 @@ object Dependencies {
     val lucene = "4.7.0"
     val metrics = "3.0.2"
     val netty = "4.0.17.Final"
+    val play = "2.3-M1"
     val powermock = "1.5.4"
-    val scala = "2.11.0"
+    val scala = "2.10.4"
     val scalastyle = "0.4.0"
     val slf4j = "1.7.7"
     val spring = "4.0.3.RELEASE"
@@ -198,7 +199,7 @@ object Dependencies {
   val base64 = "com.mindprod" % "base64" % "1.6"
   depOverrides = depOverrides ++ Set(base64)
 
-  val mockrunnerJdbc = "com.mockrunner" % "mockrunner-jdbc" % "1.0.0" % "test"
+  val mockrunnerJdbc = "com.mockrunner" % "mockrunner-jdbc" % "1.0.0"
   depOverrides = depOverrides ++ Set(mockrunnerJdbc)
 
   val checkstyle = "com.puppycrawl.tools" % "checkstyle" % "5.7"
@@ -288,22 +289,22 @@ object Dependencies {
   val oldFreemarker = "freemarker" % "freemarker" % "2.3.15"
   depOverrides = depOverrides ++ Set(oldFreemarker)
 
-  val cucumberAndroid = "info.cukes" % "cucumber-android" % Versions.cucumber % "test"
-  val cucumberClojure = "info.cukes" % "cucumber-clojure" % Versions.cucumber % "test"
-  val cucumberCore = "info.cukes" % "cucumber-core" % Versions.cucumber % "test"
-  val cucumberGroovy = "info.cukes" % "cucumber-groovy" % Versions.cucumber % "test"
-  val cucumberGuice = "info.cukes" % "cucumber-guice" % Versions.cucumber % "test"
-  val cucumberIoke = "info.cukes" % "cucumber-ioke" % Versions.cucumber % "test"
-  val cucumberJava = "info.cukes" % "cucumber-java" % Versions.cucumber % "test"
-  val cucumberJruby = "info.cukes" % "cucumber-jruby" % Versions.cucumber % "test"
-  val cucumberJunit = "info.cukes" % "cucumber-junit" % Versions.cucumber % "test"
-  val cucumberJython = "info.cukes" % "cucumber-jython" % Versions.cucumber % "test"
-  val cucumberNeedle = "info.cukes" % "cucumber-needle" % Versions.cucumber % "test"
-  val cucumberOpenejb = "info.cukes" % "cucumber-openejb" % Versions.cucumber % "test"
-  val cucumberPicocontainer = "info.cukes" % "cucumber-picocontainer" % Versions.cucumber % "test"
-  val cucumberScala = "info.cukes" % "cucumber-scala" % Versions.cucumber % "test"
-  val cucumberSpring = "info.cukes" % "cucumber-spring" % Versions.cucumber % "test"
-  val cucumberWeld = "info.cukes" % "cucumber-weld" % Versions.cucumber % "test"
+  val cucumberAndroid = "info.cukes" % "cucumber-android" % Versions.cucumber
+  val cucumberClojure = "info.cukes" % "cucumber-clojure" % Versions.cucumber
+  val cucumberCore = "info.cukes" % "cucumber-core" % Versions.cucumber
+  val cucumberGroovy = "info.cukes" % "cucumber-groovy" % Versions.cucumber
+  val cucumberGuice = "info.cukes" % "cucumber-guice" % Versions.cucumber
+  val cucumberIoke = "info.cukes" % "cucumber-ioke" % Versions.cucumber
+  val cucumberJava = "info.cukes" % "cucumber-java" % Versions.cucumber
+  val cucumberJruby = "info.cukes" % "cucumber-jruby" % Versions.cucumber
+  val cucumberJunit = "info.cukes" % "cucumber-junit" % Versions.cucumber
+  val cucumberJython = "info.cukes" % "cucumber-jython" % Versions.cucumber
+  val cucumberNeedle = "info.cukes" % "cucumber-needle" % Versions.cucumber
+  val cucumberOpenejb = "info.cukes" % "cucumber-openejb" % Versions.cucumber
+  val cucumberPicocontainer = "info.cukes" % "cucumber-picocontainer" % Versions.cucumber
+  val cucumberScala = "info.cukes" % "cucumber-scala" % Versions.cucumber
+  val cucumberSpring = "info.cukes" % "cucumber-spring" % Versions.cucumber
+  val cucumberWeld = "info.cukes" % "cucumber-weld" % Versions.cucumber
   depOverrides = depOverrides ++ Set(cucumberAndroid, cucumberClojure, cucumberCore, cucumberGroovy, cucumberGuice, cucumberIoke,
     cucumberJava, cucumberJruby, cucumberJunit, cucumberJython, cucumberNeedle, cucumberOpenejb, cucumberPicocontainer,
     cucumberScala, cucumberSpring, cucumberWeld)
@@ -407,7 +408,7 @@ object Dependencies {
   val jodaTime = "joda-time" % "joda-time" % "2.3"
   depOverrides = depOverrides ++ Set(jodaTime)
 
-  val junit = "junit" % "junit" % "4.11" % "test"
+  val junit = "junit" % "junit" % "4.11"
   depOverrides = depOverrides ++ Set(junit)
 
   val jxl = "jxl" % "jxl" % "2.6.10"
@@ -492,8 +493,8 @@ object Dependencies {
   val camelSmpp = "org.apache.camel" % "camel-smpp" % Versions.camel
   val camelSolr = "org.apache.camel" % "camel-solr" % Versions.camel
   val camelSpring = "org.apache.camel" % "camel-spring" % Versions.camel
-  val camelTest = "org.apache.camel" % "camel-test" % Versions.camel % "test"
-  val camelTestng = "org.apache.camel" % "camel-testng" % Versions.camel % "test"
+  val camelTest = "org.apache.camel" % "camel-test" % Versions.camel
+  val camelTestng = "org.apache.camel" % "camel-testng" % Versions.camel
   val camelVelocity = "org.apache.camel" % "camel-velocity" % Versions.camel
   val camelWeb = "org.apache.camel" % "camel-web" % Versions.camel
   val camelWebsocket = "org.apache.camel" % "camel-websocket" % Versions.camel
@@ -519,22 +520,24 @@ object Dependencies {
   val cxfRtBindingsXml = "org.apache.cxf" % "cxf-rt-bindings-xml" % Versions.cxf
   val cxfRtCore = "org.apache.cxf" % "cxf-rt-core" % Versions.cxf
   val cxfRtDatabindingJaxb = "org.apache.cxf" % "cxf-rt-databinding-jaxb" % Versions.cxf
+  val cxfRtFeaturesClustering = "org.apache.cxf" % "cxf-rt-features-clustering" % Versions.cxf
   val cxfRtFrontendJaxrs = "org.apache.cxf" % "cxf-rt-frontend-jaxrs" % Versions.cxf
   val cxfRtFrontendJaxws = "org.apache.cxf" % "cxf-rt-frontend-jaxws" % Versions.cxf
   val cxfRtFrontendSimple = "org.apache.cxf" % "cxf-rt-frontend-simple" % Versions.cxf
   val cxfRtRsExtensionProviders = "org.apache.cxf" % "cxf-rt-rs-extension-providers" % Versions.cxf
   val cxfRtRsExtensionSearch = "org.apache.cxf" % "cxf-rt-rs-extension-search" % Versions.cxf
   val cxfRtRsSecurityCors = "org.apache.cxf" % "cxf-rt-rs-security-cors" % Versions.cxf
+  val cxfRtRsSecurityOauth = "org.apache.cxf" % "cxf-rt-rs-security-oauth" % Versions.cxf
   val cxfRtRsSecurityOauth2 = "org.apache.cxf" % "cxf-rt-rs-security-oauth2" % Versions.cxf
   val cxfRtTransportsHttp = "org.apache.cxf" % "cxf-rt-transports-http" % Versions.cxf
   val cxfRtTransportsHttpJetty = "org.apache.cxf" % "cxf-rt-transports-http-jetty" % Versions.cxf
   val cxfRtWsAddr = "org.apache.cxf" % "cxf-rt-ws-addr" % Versions.cxf
-  val cxfTestutils = "org.apache.cxf" % "cxf-testutils" % Versions.cxf % "test"
-  val cxfSystestsJaxrs = "org.apache.cxf.systests" % "cxf-systests-jaxrs" % Versions.cxf % "test"
+  val cxfTestutils = "org.apache.cxf" % "cxf-testutils" % Versions.cxf
+  val cxfSystestsJaxrs = "org.apache.cxf.systests" % "cxf-systests-jaxrs" % Versions.cxf
   depOverrides = depOverrides ++ Set(cxfApi, cxfBundle, cxfRtBindingsSoap, cxfRtBindingsXml, cxfRtCore, cxfRtDatabindingJaxb,
-    cxfRtFrontendJaxrs, cxfRtFrontendJaxws, cxfRtFrontendSimple, cxfRtRsExtensionProviders, cxfRtRsExtensionSearch,
-    cxfRtRsSecurityCors, cxfRtRsSecurityOauth2, cxfRtTransportsHttp, cxfRtTransportsHttpJetty, cxfRtWsAddr,
-    cxfTestutils, cxfSystestsJaxrs)
+    cxfRtFeaturesClustering, cxfRtFrontendJaxrs, cxfRtFrontendJaxws, cxfRtFrontendSimple, cxfRtRsExtensionProviders,
+    cxfRtRsExtensionSearch, cxfRtRsSecurityCors, cxfRtRsSecurityOauth, cxfRtRsSecurityOauth2, cxfRtTransportsHttp,
+    cxfRtTransportsHttpJetty, cxfRtWsAddr, cxfTestutils, cxfSystestsJaxrs)
 
   val geronimoAnnotation10Spec = "org.apache.geronimo.specs" % "geronimo-annotation_1.0_spec" % "1.1.1"
   depOverrides = depOverrides ++ Set(geronimoAnnotation10Spec)
@@ -619,7 +622,7 @@ object Dependencies {
   val jettison = "org.codehaus.jettison" % "jettison" % "1.3.5"
   depOverrides = depOverrides ++ Set(jettison)
 
-  val easymock = "org.easymock" % "easymock" % "3.2" % "test"
+  val easymock = "org.easymock" % "easymock" % "3.2"
   depOverrides = depOverrides ++ Set(easymock)
 
   val jettyAnt = "org.eclipse.jetty" % "jetty-ant" % Versions.jetty
@@ -696,7 +699,7 @@ object Dependencies {
   val mybatisSpring = "org.mybatis" % "mybatis-spring" %"1.2.2"
   depOverrides = depOverrides ++ Set(mybatis, mybatisEhcache, mybatisGuice, mybatisSpring)
 
-  val mockitoAll = "org.mockito" % "mockito-all" % "1.9.5" % "test"
+  val mockitoAll = "org.mockito" % "mockito-all" % "1.9.5"
   depOverrides = depOverrides ++ Set(mockitoAll)
 
   val mongoJavaDriver = "org.mongodb" % "mongo-java-driver" % "2.11.4"
@@ -721,14 +724,14 @@ object Dependencies {
   val asmXml = "org.ow2.asm" % "asm-xml" % Versions.asm
   depOverrides = depOverrides ++ Set(asm, asmAll, asmAnalysis, asmCommons, asmDebugAll, asmTree, asmUtil, asmXml)
 
-  val powermockApi = "org.powermock" % "powermock-api" % Versions.powermock % "test"
-  val powermockCore = "org.powermock" % "powermock-core" % Versions.powermock % "test"
-  val powermockEasymockReleaseFull = "org.powermock" % "powermock-easymock-release-full" % Versions.powermock % "test"
-  val powermockMockitoReleaseFull = "org.powermock" % "powermock-mockito-release-full" % Versions.powermock % "test"
-  val powermockModuleJunit4 = "org.powermock" % "powermock-module-junit4" % Versions.powermock % "test"
-  val powermockModuleJunit4Common = "org.powermock" % "powermock-module-junit4-common" % Versions.powermock % "test"
-  val powermockModuleTestng = "org.powermock" % "powermock-module-testng" % Versions.powermock % "test"
-  val powermockModuleTestngCommon = "org.powermock" % "powermock-module-testng-common" % Versions.powermock % "test"
+  val powermockApi = "org.powermock" % "powermock-api" % Versions.powermock
+  val powermockCore = "org.powermock" % "powermock-core" % Versions.powermock
+  val powermockEasymockReleaseFull = "org.powermock" % "powermock-easymock-release-full" % Versions.powermock
+  val powermockMockitoReleaseFull = "org.powermock" % "powermock-mockito-release-full" % Versions.powermock
+  val powermockModuleJunit4 = "org.powermock" % "powermock-module-junit4" % Versions.powermock
+  val powermockModuleJunit4Common = "org.powermock" % "powermock-module-junit4-common" % Versions.powermock
+  val powermockModuleTestng = "org.powermock" % "powermock-module-testng" % Versions.powermock
+  val powermockModuleTestngCommon = "org.powermock" % "powermock-module-testng-common" % Versions.powermock
   depOverrides = depOverrides ++ Set(powermockApi, powermockCore, powermockEasymockReleaseFull, powermockMockitoReleaseFull,
     powermockModuleJunit4, powermockModuleJunit4Common, powermockModuleTestng, powermockModuleTestngCommon)
 
@@ -778,7 +781,7 @@ object Dependencies {
   val springJms = "org.springframework" % "spring-jms" % Versions.spring
   val springOrm = "org.springframework" % "spring-orm" % Versions.spring
   val springOxm = "org.springframework" % "spring-oxm" % Versions.spring
-  val springTest = "org.springframework" % "spring-test" % Versions.spring % "test"
+  val springTest = "org.springframework" % "spring-test" % Versions.spring
   val springTx = "org.springframework" % "spring-tx" % Versions.spring
   val springWeb = "org.springframework" % "spring-web" % Versions.spring
   val springWebmvc = "org.springframework" % "spring-webmvc" % Versions.spring
@@ -815,7 +818,7 @@ object Dependencies {
   val springSecurityOauth2 = "org.springframework.security.oauth" % "spring-security-oauth2" % Versions.springSecurityOauth
   depOverrides = depOverrides ++ Set(springSecurityOauth2)
 
-  val testng = "org.testng" % "testng" % "6.8.8" % "test"
+  val testng = "org.testng" % "testng" % "6.8.8"
   depOverrides = depOverrides ++ Set(testng)
 
   val snakeYaml = "org.yaml" % "snakeyaml" % "1.13"
@@ -837,7 +840,7 @@ object Dependencies {
   val xmlApis = "xml-apis" % "xml-apis" % "1.4.01"
   depOverrides = depOverrides ++ Set(xmlApis)
 
-  val xmlunit = "xmlunit" % "xmlunit" % "1.5" % "test"
+  val xmlunit = "xmlunit" % "xmlunit" % "1.5"
   depOverrides = depOverrides ++ Set(xmlunit)
 
   val xom = "xom" % "xom" % "1.2.5"
@@ -845,9 +848,17 @@ object Dependencies {
 
   val xpp3min = "xpp3_min" % "xpp3_min" % "1.1.4c"
   depOverrides = depOverrides ++ Set(xpp3min)
+
+  val soaDependencies = Seq(logbackClassic % "runtime", slf4jApi, metricsAnnotation, metricsCore % "runtime",
+    metricsHealthchecks % "runtime", metricsJvm % "runtime", metricsLogback % "runtime", metricsServlet % "runtime",
+    metricsServlets % "runtime")
+
+  val playDependencies = Seq()
 }
 
 object Plugins {
+  import Dependencies._
+
   // IDEs
   val sbtEclipse = "com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.4.0"
   val sbtIdea = "com.github.mpeltonen" % "sbt-idea" % "1.6.0"
@@ -920,6 +931,7 @@ object Plugins {
 
   // Utility
   val sbtAboutPlugins = "com.github.jozic" % "sbt-about-plugins" % "0.1.0"
+  val sbtBuildinfo = "com.eed3si9n" % "sbt-buildinfo" % "0.3.1"
 
   // Code Coverage
   val scct = "ch.craven" %% "scct-plugin" % "0.2"
@@ -935,15 +947,17 @@ object Plugins {
 
   // OSGI
   val sbtOsgi = "com.typesafe.sbt" % "sbt-osgi" % "0.7.0"
+
+  // Play
+  val play = "com.typesafe.play" % "sbt-plugin" % Versions.play
 }
 
 object Settings {
 
-  import Resolvers._
   import Dependencies._
+  import Resolvers._
 
-
-  val coreDefaultSettings : Seq[Setting[_]] = Defaults.coreDefaultSettings ++ Seq(
+  val commonSettings = Seq(
     organizationName := "Baleio Inc.",
     organizationHomepage := Some(url("http://www.bale.io")),
     scalaVersion := Versions.scala,
@@ -951,7 +965,7 @@ object Settings {
     conflictManager := ConflictManager.strict,
     exportJars := true,
     autoScalaLibrary := false,
-    dependencyOverrides := depOverrides,
+    dependencyOverrides ++= depOverrides,
     scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature"),
     scalacOptions in(Compile, doc) ++= Seq("-external-urls:scala=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
     javacOptions ++= Seq("-encoding", "UTF-8", "-source", Versions.java, "-target", Versions.java, "-Xlint:all"),
@@ -964,5 +978,12 @@ object Settings {
         else
           Some(releases)
     },
-    credentials += Credentials(Path.userHome / ".ivy2" / ".auth-baleio"))
+    credentials += Credentials(Path.userHome / ".sbt" / ".auth-baleio"))
+
+  def SOAProject(name : String) = (
+      Project(name, file(name))
+      settings(commonSettings:_*)
+  )
+
 }
+
