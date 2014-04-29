@@ -965,6 +965,7 @@ object Settings {
     conflictManager := ConflictManager.strict,
     exportJars := true,
     autoScalaLibrary := false,
+    crossPaths := false,
     dependencyOverrides ++= depOverrides,
     scalacOptions ++= Seq("-encoding", "UTF-8", "-deprecation", "-unchecked", "-feature"),
     scalacOptions in(Compile, doc) ++= Seq("-external-urls:scala=http://www.scala-lang.org/api/current/", "-no-link-warnings"),
