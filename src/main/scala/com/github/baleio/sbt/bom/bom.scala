@@ -849,9 +849,11 @@ object Dependencies {
   val xpp3min = "xpp3_min" % "xpp3_min" % "1.1.4c"
   depOverrides = depOverrides ++ Set(xpp3min)
 
-  val soaDependencies = Seq(logbackClassic % "runtime", slf4jApi, metricsAnnotation, metricsCore % "runtime",
+  val soaRsDependencies = Seq(scalaLibrary, logbackClassic % "runtime", slf4jApi, metricsAnnotation, metricsCore % "runtime",
     metricsHealthchecks % "runtime", metricsJvm % "runtime", metricsLogback % "runtime", metricsServlet % "runtime",
     metricsServlets % "runtime")
+
+  val soaModelDependencies = Seq(scalaLibrary, javaxPersistence, validationApi, hibernateValidator)
 
   val playDependencies = Seq()
 }
